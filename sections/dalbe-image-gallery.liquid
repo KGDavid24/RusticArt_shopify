@@ -13,18 +13,6 @@
       "content": "Intro"
     },
     {
-      "type": "text",
-      "id": "back_label",
-      "label": "Back to Portfolio label",
-      "default": "← Înapoi la portofoliu"
-    },
-    {
-      "type": "text",
-      "id": "button_label",
-      "label": "Button Label",
-      "default": "Contactează-ne"
-    },
-    {
       "type": "url",
       "id": "button_link",
       "label": "Button Link"
@@ -232,9 +220,9 @@
         <p class="gallery-project-continuation" id="gallery-project-continuation" style="display:none;"></p>
       </div>
     {% endif %}
-    {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+    {% if section.settings.button_link != blank %}
       <div class="gallery-intro__button">
-        <a href="{{ section.settings.button_link }}" class="button">{{ section.settings.button_label | escape }}</a>
+        <a href="{{ section.settings.button_link }}" class="button">{{ 'sections.gallery.button_label' | t }}</a>
       </div>
     {% endif %}
   </div>
@@ -252,7 +240,7 @@
   {% endfor %}
 
   <div class="gallery-project-bar" id="gallery-project-bar">
-    <a href="/pages/portofoliu" class="gallery-back-link">{{ section.settings.back_label }}</a>
+    <a href="/pages/portofoliu" class="gallery-back-link">{{ 'sections.gallery.back_to_portfolio' | t }}</a>
     <span class="gallery-project-title" id="gallery-project-title"></span>
   </div>
 

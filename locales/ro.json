@@ -551,6 +551,7 @@
   "sections": {
     "gallery": {
       "back_to_portfolio": "← Înapoi la portofoliu",
+      "button_label": "Contactează-ne",
       "empty_state": "Nu există imagini pentru acest proiect."
     },
     "portfolio": {

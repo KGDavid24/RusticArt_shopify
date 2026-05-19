@@ -551,6 +551,7 @@
   "sections": {
     "gallery": {
       "back_to_portfolio": "← Back to portfolio",
+      "button_label": "Contact us",
       "empty_state": "No images found for this project."
     },
     "portfolio": {
