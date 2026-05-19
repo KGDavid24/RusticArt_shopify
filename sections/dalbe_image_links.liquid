@@ -93,7 +93,13 @@
         {
           "type": "url",
           "id": "button_link",
-          "label": "Button Link"
+          "label": "Button Link (fallback if no project slug)"
+        },
+        {
+          "type": "text",
+          "id": "project_slug",
+          "label": "Gallery Project Slug",
+          "info": "Links this card to gallery images. E.g. 'hotel-sighisoara'. Must match the Project Slug set on gallery images."
         },
         {
           "type": "checkbox",
@@ -192,8 +198,14 @@
 }
 {% endschema %}
 
+{% liquid
+  comment
+    Build a project-aware URL helper. If the block has a project_slug, link to the
+    gallery filtered to that project. Otherwise fall back to button_link.
+  endcomment
+%}
+
 <div class="image-blocks-section" style="background-color: {{ section.settings.background_color }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
-  <!-- Tag gombok -->
   <div class="tags-container">
     {% assign unique_tags = "" %}
     {% for block in section.blocks %}
@@ -202,7 +214,7 @@
         {% for tag in tags %}
           {% assign tag = tag | strip %}
           {% unless unique_tags contains tag %}
-            <button class="tag-button" data-tag="{{ tag }}" onclick="filterImages('{{ tag }}')">{{ tag }}</button>
+            <button class="tag-button{% if forloop.parentloop.index == 1 and forloop.index == 1 %} active{% endif %}" data-tag="{{ tag }}">{{ tag }}</button>
             {% assign unique_tags = unique_tags | append: tag | append: "," %}
           {% endunless %}
         {% endfor %}
@@ -212,11 +224,17 @@
 
   <div class="image-blocks-container">
     {% for block in section.blocks %}
+      {% if block.settings.project_slug != blank %}
+        {% assign card_link = '/pages/galerie?project=' | append: block.settings.project_slug %}
+      {% else %}
+        {% assign card_link = block.settings.button_link %}
+      {% endif %}
+
       <div class="image-block" data-tags="{{ block.settings.tags | replace: ',', ' ' }}">
         <div class="image-container">
           {% if block.settings.image %}
             {% if block.settings.make_image_clickable %}
-              <a href="{{ block.settings.button_link }}" class="image-link" target="_blank">
+              <a href="{{ card_link }}" class="image-link">
                 <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.heading | escape }}" class="image-block-img" style="border-radius: {{ section.settings.image_border_radius }}px;">
               </a>
             {% else %}
@@ -226,7 +244,7 @@
             <img src="https://via.placeholder.com/600" alt="Placeholder Image" class="image-block-img" style="border-radius: {{ section.settings.image_border_radius }}px;">
           {% endif %}
 
-          <div class="text-overlay" style="position: absolute; 
+          <div class="text-overlay" style="position: absolute;
             {% case block.settings.text_position %}
               {% when 'top-left' %} top: 10px; left: 10px; text-align: left;
               {% when 'top-center' %} top: 10px; left: 50%; transform: translateX(-50%); text-align: center;
@@ -247,14 +265,14 @@
               {% endif %}
               {% if block.settings.show_button %}
                 {% if block.settings.use_text_for_button %}
-                  <a href="{{ block.settings.button_link }}" class="text-button {% if block.settings.show_arrow %}with-arrow{% endif %}" aria-label="{{ block.settings.button_label }}">
+                  <a href="{{ card_link }}" class="text-button {% if block.settings.show_arrow %}with-arrow{% endif %}" aria-label="{{ block.settings.button_label }}">
                     {{ block.settings.button_label }}
                     {% if block.settings.show_arrow %}
                       <span class="arrow">→</span>
                     {% endif %}
                   </a>
                 {% else %}
-                  <a href="{{ block.settings.button_link }}" class="button" style="background-color: {{ block.settings.button_bg_color }}; color: {{ block.settings.button_font_color }}; border-radius: {{ block.settings.button_border_radius }}px; border: {{ block.settings.button_border_thickness }}px solid {{ block.settings.button_border_color }};">
+                  <a href="{{ card_link }}" class="button" style="background-color: {{ block.settings.button_bg_color }}; color: {{ block.settings.button_font_color }}; border-radius: {{ block.settings.button_border_radius }}px; border: {{ block.settings.button_border_thickness }}px solid {{ block.settings.button_border_color }};">
                     {{ block.settings.button_label }}
                   </a>
                 {% endif %}
@@ -270,29 +288,37 @@
 <style>
   .image-blocks-section {
     width: 100%;
-    padding-top: 40px;
-    padding-bottom: 40px;
   }
 
+  /* Filter pill buttons */
   .tags-container {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 
   .tag-button {
-    padding: 10px 20px;
+    display: inline-block;
+    padding: 9px 24px;
     margin: 0 5px;
-    background-color: #007bff;
-    color: white;
-    border: none;
+    background-color: transparent;
+    color: #111;
+    border: 1.5px solid #111;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
-  .tag-button:hover {
-    background-color: #0056b3;
+  .tag-button:hover,
+  .tag-button.active {
+    background-color: #111;
+    color: #fff;
   }
 
+  /* Project cards grid */
   .image-blocks-container {
     display: flex;
     flex-wrap: wrap;
@@ -321,7 +347,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    image-rendering: auto;
   }
 
   .text-overlay {
@@ -333,10 +358,6 @@
     text-align: center;
     z-index: 2;
     padding: 10px;
-  }
-
-  .text-container {
-    position: relative;
   }
 
   .text-container h3,
@@ -355,9 +376,6 @@
     padding: 10px 20px;
     display: inline-flex;
     align-items: center;
-    border-width: {{ block.settings.button_border_thickness }}px;
-    border-radius: {{ block.settings.button_border_radius }}px;
-    color: {{ block.settings.button_font_color }};
     text-decoration: none;
     justify-content: center;
     font-weight: bold;
@@ -369,78 +387,33 @@
     color: inherit;
     font-size: 16px;
     cursor: pointer;
-    text-decoration:none;
+    text-decoration: none;
   }
 
   .with-arrow .arrow {
     margin-left: 8px;
   }
-
-  .tag-button {
-    padding: 10px 20px;
-    margin: 0 5px;
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-    cursor: pointer;
-    border-radius: 30px;
-}
-
-  .tag-button:hover {
-
-    background-color: black;
-    color: white;
-    border: 1px solid black;
-    cursor: pointer;
-    border-radius: 30px;
-}
-
-  .tags-container {
-    text-align: center;
-    margin-bottom: 40px;
-}
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const defaultTag = 'toate'; // Default active tag
-    filterImages(defaultTag);
-    
-    // Set initial active button
-    const defaultButton = document.querySelector(`.tag-button[data-tag="${defaultTag}"]`);
-    if (defaultButton) {
-      defaultButton.style.backgroundColor = 'black';
-      defaultButton.style.color = 'white';
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.tag-button');
+    const blocks = document.querySelectorAll('.image-block');
+
+    function filterImages(tag) {
+      buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.tag === tag));
+      blocks.forEach(block => {
+        const tags = block.dataset.tags.split(' ');
+        block.style.display = tags.includes(tag) ? 'block' : 'none';
+      });
     }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => filterImages(btn.dataset.tag));
+    });
+
+    // Activate default (first button)
+    const first = buttons[0];
+    if (first) filterImages(first.dataset.tag);
   });
-
-  function filterImages(tag) {
-    const imageBlocks = document.querySelectorAll('.image-block');
-    const tagButtons = document.querySelectorAll('.tag-button');
-    
-    // Remove active class from all buttons
-    tagButtons.forEach(button => {
-      button.style.backgroundColor = 'white';
-      button.style.color = 'black';
-    });
-    
-    // Set active class on clicked button
-    const activeButton = document.querySelector(`.tag-button[data-tag="${tag}"]`);
-    if (activeButton) {
-      activeButton.style.backgroundColor = 'black';
-      activeButton.style.color = 'white';
-    }
-    
-    // Show or hide images based on selected tag
-    imageBlocks.forEach(block => {
-      const tags = block.getAttribute('data-tags').split(' ');
-      if (tags.includes(tag)) {
-        block.style.display = 'block';
-      } else {
-        block.style.display = 'none';
-      }
-    });
-  }
 </script>
- 
-

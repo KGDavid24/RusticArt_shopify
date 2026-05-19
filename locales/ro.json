@@ -548,6 +548,16 @@
       "collapsed": "Formularul pentru destinatarul cardului cadou este restrâns"
     }
   },
+  "sections": {
+    "gallery": {
+      "back_to_portfolio": "← Înapoi la portofoliu",
+      "empty_state": "Nu există imagini pentru acest proiect."
+    },
+    "portfolio": {
+      "filter_all": "Toate",
+      "view_project": "Vezi proiectul"
+    }
+  },
   "shopify": {
     "links": {
       "powered_by_shopify": "Developed by Dalbe Digital Agency, Shopify Partner"

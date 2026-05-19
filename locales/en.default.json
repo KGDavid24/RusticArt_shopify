@@ -548,6 +548,16 @@
       "send_on_label": "Send on (optional)"
     }
   },
+  "sections": {
+    "gallery": {
+      "back_to_portfolio": "← Back to portfolio",
+      "empty_state": "No images found for this project."
+    },
+    "portfolio": {
+      "filter_all": "All",
+      "view_project": "View project"
+    }
+  },
   "shopify": {
     "checkout": {
       "shipping": {

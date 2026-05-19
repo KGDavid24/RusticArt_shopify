@@ -13,14 +13,14 @@
     grid-template-columns: repeat(5, 1fr) !important;
     align-items: start !important;
     column-gap: 30px !important;
-    row-gap: 50px !important;
+    row-gap: 30px !important;
     padding: 30px 0 !important;
     list-style: none !important;
   }
 
-  /* TARGET THE 6TH ITEM (STORAGE) */
-  /* This forces Storage to start in Column 2, leaving Column 1 (under All Categories) empty */
-  .mega-menu__list > li:nth-child(6) {
+  /* Force rows 2 and 3 to start in column 2, keeping column 1 (under All Categories) empty */
+  .mega-menu__list > li:nth-child(6),
+  .mega-menu__list > li:nth-child(10) {
     grid-column-start: 2 !important;
   }
 
@@ -39,9 +39,30 @@
     text-decoration: none;
     text-transform: uppercase;
     display: block;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
     font-size: 13px;
     letter-spacing: 0.05em;
+  }
+
+  /* Condensed menu (flat links, no grandchildren — e.g. Despre Noi) */
+  .mega-menu__list--condensed {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    grid-template-columns: unset !important;
+    gap: 0 !important;
+    padding: 20px 0 !important;
+  }
+
+  .mega-menu__list--condensed > li {
+    margin-right: 40px;
+  }
+
+  .mega-menu__list--condensed .mega-menu__link {
+    font-size: 13px !important;
+    margin-bottom: 0 !important;
+    padding-top: 0.3rem !important;
+    padding-bottom: 0.3rem !important;
   }
 
   /* Sub-menu (grandchild) items styling */
@@ -52,7 +73,7 @@
   }
 
   .mega-menu__list ul li {
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     line-height: 1.4;
   }
 
@@ -61,6 +82,8 @@
     font-size: 12px;
     text-decoration: none;
     font-weight: 300;
+    padding-top: 0.4rem !important;
+    padding-bottom: 0.4rem !important;
   }
   
   .mega-menu__list ul li a:hover {

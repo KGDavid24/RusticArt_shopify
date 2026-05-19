@@ -1,0 +1,241 @@
+{% comment %}
+  Portfolio grid driven by 'portfolio_project' metaobjects.
+  No blocks — add/edit projects in Shopify Admin → Content → Metaobjects.
+{% endcomment %}
+
+{% schema %}
+{
+  "name": "Portfolio (Metaobject)",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image Border Radius (px)",
+      "default": 29,
+      "min": 0,
+      "max": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top (px)",
+      "default": 40,
+      "min": 0,
+      "max": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom (px)",
+      "default": 100,
+      "min": 0,
+      "max": 200,
+      "step": 2
+    }
+  ],
+  "presets": [
+    {
+      "name": "Portfolio (Metaobject)",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% assign projects = shop.metaobjects.portfolio_project.values %}
+
+{% assign cat_string = "" %}
+{% for project in projects %}
+  {% assign cat = project.category.value | strip %}
+  {% unless cat_string contains cat %}
+    {% if cat != blank %}
+      {% assign cat_string = cat_string | append: cat | append: "|||" %}
+    {% endif %}
+  {% endunless %}
+{% endfor %}
+{% assign categories = cat_string | split: "|||" %}
+
+<div class="portfolio-section" style="background-color: {{ section.settings.background_color }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+
+  <div class="tags-container">
+    <button class="tag-button active" data-tag="toate">{{ 'sections.portfolio.filter_all' | t }}</button>
+    {% for cat in categories %}
+      {% if cat != blank %}
+        <button class="tag-button" data-tag="{{ cat }}">{{ cat | downcase }}</button>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="portfolio-grid">
+    {% for project in projects %}
+      {% assign slug  = project.slug.value | strip %}
+      {% assign cat   = project.category.value | strip %}
+      {% assign title = project.title.value %}
+      {% assign cover = project.cover_image.value %}
+
+      <div class="portfolio-card" data-category="{{ cat }}">
+        <a href="/pages/galerie?project={{ slug }}" class="portfolio-card-link">
+          <div class="portfolio-card-inner">
+            {% if cover %}
+              <img
+                src="{{ cover | image_url: width: 600 }}"
+                alt="{{ title | escape }}"
+                class="portfolio-card-img"
+                loading="lazy"
+              >
+            {% endif %}
+            <div class="portfolio-card-overlay">
+              <h2 class="portfolio-card-title">{{ title }}</h2>
+              <span class="portfolio-card-cta">{{ 'sections.portfolio.view_project' | t }} <span>→</span></span>
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .portfolio-section { width: 100%; }
+
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .tag-button {
+    display: inline-block;
+    padding: 9px 24px;
+    background-color: transparent;
+    color: #111;
+    border: 1.5px solid #d0d0d0;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: capitalize;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .tag-button:hover,
+  .tag-button.active {
+    background-color: #111;
+    color: #fff;
+  }
+
+  @media (max-width: 600px) {
+    .tags-container {
+      flex-wrap: nowrap;
+      justify-content: center;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 16px 6px;
+      scrollbar-width: none;
+    }
+
+    .tags-container::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .portfolio-card {
+    flex: 1 1 calc(25% - 20px);
+    min-width: 250px;
+    max-width: 300px;
+  }
+
+  .portfolio-card-link {
+    display: block;
+    text-decoration: none;
+  }
+
+  .portfolio-card-inner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .portfolio-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .portfolio-card-link:hover .portfolio-card-img {
+    transform: scale(1.03);
+  }
+
+  .portfolio-card-overlay {
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+    padding: 10px;
+    text-align: left;
+  }
+
+  .portfolio-card-title {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    line-height: 1.2;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  }
+
+  .portfolio-card-cta {
+    color: rgba(255,255,255,0.9);
+    font-size: 14px;
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  }
+
+  @media (max-width: 768px) {
+    .portfolio-grid { flex-direction: column; align-items: center; }
+    .portfolio-card { max-width: 100%; width: 100%; }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.tag-button');
+    const cards   = document.querySelectorAll('.portfolio-card');
+
+    function filterCards(tag) {
+      buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.tag === tag));
+      cards.forEach(card => {
+        const match = tag === 'toate' || card.dataset.category.toLowerCase() === tag.toLowerCase();
+        card.style.display = match ? 'block' : 'none';
+      });
+    }
+
+    buttons.forEach(btn => btn.addEventListener('click', () => filterCards(btn.dataset.tag)));
+    filterCards('toate');
+  });
+</script>

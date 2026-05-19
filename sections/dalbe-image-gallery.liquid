@@ -1,13 +1,50 @@
+{% comment %}
+  Gallery driven by 'portfolio_project' metaobjects.
+  When ?project=<slug> is in the URL, only that project's images are shown.
+  When accessed directly (e.g. from the nav), all images are shown.
+{% endcomment %}
+
 {% schema %}
 {
   "name": "Image Gallery",
   "settings": [
     {
+      "type": "header",
+      "content": "Intro"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Galeria Rustic Art"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Explorați creațiile noastre.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Contactează-ne"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
       "type": "select",
       "id": "container_width",
       "label": "Container Width",
       "options": [
-        { "value": "full", "label": "Full Width" },
+        { "value": "full",  "label": "Full Width" },
         { "value": "boxed", "label": "1200px" }
       ],
       "default": "boxed"
@@ -28,98 +65,262 @@
       "min": 0,
       "max": 100,
       "step": 5,
-      "default": 20
+      "default": 70
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "label": "Padding Bottom (px)",
       "min": 0,
-      "max": 100,
+      "max": 200,
       "step": 5,
-      "default": 20
-    }
-  ],
-  "blocks": [
-    {
-      "type": "image",
-      "name": "Image",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Select Image"
-        }
-      ]
+      "default": 80
     }
   ],
   "presets": [
     {
       "name": "Image Gallery",
-      "category": "Image",
-      "blocks": [
-        { "type": "image" },
-        { "type": "image" },
-        { "type": "image" }
-      ]
+      "category": "Image"
     }
   ]
 }
 {% endschema %}
 
+{% assign projects = shop.metaobjects.portfolio_project.values %}
+
 <style>
-  .image-gallery {
-    display: flex;
-    gap: {{ section.settings.image_gap }}px;
-    justify-content: space-between;
-    flex-wrap: wrap; /* Allows images to wrap on smaller screens */
-  }
-
-  .image-gallery img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .container-boxed {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .container-full {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
   .image-gallery-section {
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
-  /* Desktop: Three images side by side */
-  .image-gallery img {
-    width: calc(33.33% - {{ section.settings.image_gap }}px); /* Each image takes up one-third minus the gap */
+  .container-boxed { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+  .container-full  { width: 100%; margin: 0; padding: 0; }
+
+  .gallery-intro {
+    text-align: center;
+    padding-bottom: 52px;
   }
 
-  /* Mobile devices: Stack images vertically */
+  .gallery-intro__heading {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  .gallery-intro__description {
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #333;
+  }
+
+  .gallery-project-continuation {
+    margin-top: 8px;
+    color: #555;
+  }
+
+  .gallery-intro__button {
+    margin-top: 28px;
+  }
+
+  .gallery-project-bar {
+    display: none;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 0 4px;
+  }
+
+  .gallery-project-bar.visible { display: flex; }
+
+  .gallery-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #111;
+    text-decoration: none;
+    border: 1.5px solid #111;
+    border-radius: 50px;
+    padding: 7px 18px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .gallery-back-link:hover {
+    background-color: #111;
+    color: #fff;
+  }
+
+  .gallery-project-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+  }
+
+  .image-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ section.settings.image_gap }}px;
+    margin-bottom: 100px;
+  }
+
+  .gallery-image-wrap {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .gallery-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .gallery-project-continuation {
+    text-align: center;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 8px;
+  }
+
+  .gallery-empty-state {
+    display: none;
+    text-align: center;
+    padding: 60px 20px;
+    color: #888;
+    font-size: 15px;
+    width: 100%;
+    grid-column: 1 / -1;
+  }
+
   @media (max-width: 768px) {
-    .image-gallery {
-      flex-direction: column; /* Stack images vertically on mobile */
-      align-items: center; /* Center images horizontally */
+    .image-gallery { grid-template-columns: repeat(2, 1fr); }
+
+    .gallery-project-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 16px;
     }
 
-    .image-gallery img {
-      width: 100%; /* On mobile, images take full width */
+    .gallery-back-link {
+      font-size: 12px;
+      padding: 6px 14px;
+      white-space: nowrap;
     }
+
+    .gallery-project-title {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .image-gallery { grid-template-columns: 1fr; }
   }
 </style>
 
 <div class="image-gallery-section {% if section.settings.container_width == 'full' %}container-full{% else %}container-boxed{% endif %}">
-  <div class="image-gallery">
-    {% for block in section.blocks %}
-      {% if block.settings.image %}
-        <img src="{{ block.settings.image | img_url: 'large' }}" alt="Gallery Image">
+
+  <div class="gallery-intro">
+    {% if section.settings.heading != blank %}
+      <h1 class="gallery-intro__heading">{{ section.settings.heading | escape }}</h1>
+    {% endif %}
+    {% if section.settings.description != blank %}
+      <div class="gallery-intro__description rte">
+        {{ section.settings.description }}
+        <p class="gallery-project-continuation" id="gallery-project-continuation" style="display:none;"></p>
+      </div>
+    {% endif %}
+    {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+      <div class="gallery-intro__button">
+        <a href="{{ section.settings.button_link }}" class="button">{{ section.settings.button_label | escape }}</a>
+      </div>
+    {% endif %}
+  </div>
+
+  {% comment %} Hidden metadata per project — title & description read by JS {% endcomment %}
+  {% for project in projects %}
+    <span
+      class="gallery-project-meta"
+      data-project="{{ project.slug.value | strip }}"
+      data-title="{{ project.title.value | escape }}"
+      data-description="{{ project.description.value | escape }}"
+      aria-hidden="true"
+      style="display:none;"
+    ></span>
+  {% endfor %}
+
+  <div class="gallery-project-bar" id="gallery-project-bar">
+    <a href="/pages/portofoliu" class="gallery-back-link">{{ 'sections.gallery.back_to_portfolio' | t }}</a>
+    <span class="gallery-project-title" id="gallery-project-title"></span>
+  </div>
+
+  <div class="image-gallery" id="image-gallery">
+    {% for project in projects %}
+      {% assign slug   = project.slug.value | strip %}
+      {% assign title  = project.title.value %}
+      {% assign images = project.gallery_images.value %}
+      {% if images %}
+        {% for image in images %}
+          <div class="gallery-image-wrap" data-project="{{ slug }}">
+            <img
+              src="{{ image | image_url: width: 800 }}"
+              alt="{{ title | escape }}"
+              loading="lazy"
+            >
+          </div>
+        {% endfor %}
       {% endif %}
     {% endfor %}
+    <p class="gallery-empty-state" id="gallery-empty-state">{{ 'sections.gallery.empty_state' | t }}</p>
   </div>
+
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const params  = new URLSearchParams(window.location.search);
+    const project = params.get('project');
+    if (!project) return;
+
+    const bar        = document.getElementById('gallery-project-bar');
+    const titleEl    = document.getElementById('gallery-project-title');
+    const emptyState = document.getElementById('gallery-empty-state');
+    const wraps      = document.querySelectorAll('.gallery-image-wrap');
+
+    bar.classList.add('visible');
+
+    const meta = document.querySelector(`.gallery-project-meta[data-project="${project}"]`);
+    if (meta) {
+      titleEl.textContent = meta.dataset.title;
+
+      if (meta.dataset.description) {
+        const contEl = document.getElementById('gallery-project-continuation');
+        if (contEl) {
+          contEl.textContent = meta.dataset.description;
+          contEl.style.display = 'block';
+        }
+      }
+    } else {
+      titleEl.textContent = project.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    }
+
+    let visible = 0;
+    wraps.forEach(wrap => {
+      if (wrap.dataset.project === project) {
+        visible++;
+      } else {
+        wrap.style.display = 'none';
+      }
+    });
+
+    if (visible === 0) emptyState.style.display = 'block';
+  });
+</script>
