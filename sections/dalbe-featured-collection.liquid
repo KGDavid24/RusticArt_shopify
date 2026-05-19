@@ -1,0 +1,684 @@
+{% schema %}
+{
+  "name": "Featured Dalbe Collection",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "featured_collection",
+      "label": "Select Collection"
+    },
+    {
+      "type": "color",
+      "id": "section_background_color",
+      "label": "Section Background Color",
+      "default": "#ffffff"
+    },
+    {
+  "type": "range",
+  "id": "padding_top",
+  "label": "Padding Top",
+  "min": 0,
+  "max": 100,
+  "step": 5,
+  "default": 40
+},
+{
+  "type": "range",
+  "id": "padding_bottom",
+  "label": "Padding Bottom",
+  "min": 0,
+  "max": 100,
+  "step": 5,
+  "default": 40
+},
+
+    {
+      "type": "image_picker",
+      "id": "collection_image",
+      "label": "Collection Image"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Card Background Color"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Add to Cart Button Background Color"
+    },
+    {
+      "type": "text",
+      "id": "collection_button_text",
+      "label": "Collection Image Button Text",
+      "default": "Shop Now"
+    },
+    {
+  "type": "text",
+  "id": "collection_link",
+  "label": "Collection Link URL"
+},
+{
+  "type": "text",
+  "id": "button_link",
+  "label": "Button Link URL"
+},
+
+    {
+      "type": "text",
+      "id": "product_button_text",
+      "label": "Product Card Add to Cart Button Text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Product Title Font Size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Product Title Alignment",
+      "options": [
+        {"value": "left", "label": "Left"},
+        {"value": "center", "label": "Center"},
+        {"value": "right", "label": "Right"}
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "heading_text",
+      "label": "Heading Text",
+      "default": "<h3>Heading</h3>"
+    },
+    {
+      "type": "richtext",
+      "id": "text_content",
+      "label": "Text Content",
+      "default": "<p>Product Description</p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "label": "Heading Font Size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "text_font_size",
+      "label": "Text Font Size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "heading_font_color",
+      "label": "Heading Font Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_font_color",
+      "label": "Text Font Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text Position",
+      "options": [
+        {"value": "top-left", "label": "Top Left"},
+        {"value": "top-center", "label": "Top Center"},
+        {"value": "top-right", "label": "Top Right"},
+        {"value": "center-left", "label": "Center Left"},
+        {"value": "center", "label": "Center"},
+        {"value": "center-right", "label": "Center Right"},
+        {"value": "bottom-left", "label": "Bottom Left"},
+        {"value": "bottom-center", "label": "Bottom Center"},
+        {"value": "bottom-right", "label": "Bottom Right"}
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "add_arrow",
+      "label": "Add Arrow to Button"
+    },
+    {
+      "type": "text",
+      "id": "button_border_radius",
+      "label": "Button Border Radius (px)",
+      "default": "5"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button Border Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_font_color",
+      "label": "Button Font Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button Background Color",
+      "default": "#007bff"
+    },
+    {
+      "type": "checkbox",
+      "id": "underline_button_text",
+      "label": "Underline Button Text"
+    },
+    {
+      "type": "checkbox",
+      "id": "transparent_button_bg",
+      "label": "Make Button Background Transparent"
+    },
+    {
+      "type": "checkbox",
+      "id": "add_border_to_button",
+      "label": "Add Border to Button"
+    },
+    {
+      "type": "range",
+      "id": "button_border_thickness",
+      "label": "Button Border Thickness (px)",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "out_of_stock_bg_color",
+      "label": "Out of Stock Button Background Color"
+    },
+    {
+      "type": "color",
+      "id": "out_of_stock_font_color",
+      "label": "Out of Stock Button Font Color"
+    },
+    {
+      "type": "text",
+      "id": "out_of_stock_text",
+      "label": "Out of Stock Button Text",
+      "default": "Out of Stock"
+    },
+    {
+  "type": "text",
+  "id": "badge_text",
+  "label": "Kedvezmény badge szöveg",
+  "default": "-Akció-"
+},
+{
+  "type": "color",
+  "id": "badge_background_color",
+  "label": "Badge háttérszíne",
+  "default": "#e53935"
+},
+{
+  "type": "color",
+  "id": "badge_text_color",
+  "label": "Badge szövegszíne",
+  "default": "#ffffff"
+},
+  ],
+  "presets": [
+    {
+      "name": "Featured Dalbe Collection",
+    }
+  ]
+}
+{% endschema %}
+
+<div class="featured-collection-container"
+   style="max-width: 1200px; margin: 0 auto; 
+         padding-top: {{ section.settings.padding_top }}px; 
+         padding-bottom: {{ section.settings.padding_bottom }}px;
+         background-color: {{ section.settings.section_background_color }};">
+  <div class="featured-collection">
+    <div class="collection-image" style="position: relative; overflow: hidden; width: 30%;"> 
+      <a href="{{ section.settings.collection_link }}">
+        {% if section.settings.collection_image %}
+          <img src="{{ section.settings.collection_image | img_url: '1200x' }}" alt="Featured Collection Image" />
+        {% endif %}
+      </a>
+
+      <div class="text-overlay" style="position: absolute; 
+        {% case section.settings.text_position %}
+          {% when 'top-left' %}
+            top: 10px; left: 10px; text-align: left;
+          {% when 'top-center' %}
+            top: 10px; left: 50%; transform: translateX(-50%); text-align: center;
+          {% when 'top-right' %}
+            top: 10px; right: 10px; text-align: right;
+          {% when 'center-left' %}
+            top: 50%; left: 10px; transform: translateY(-50%); text-align: left;
+          {% when 'center' %}
+            top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;
+          {% when 'center-right' %}
+            top: 50%; right: 10px; transform: translateY(-50%); text-align: right;
+          {% when 'bottom-left' %}
+            bottom: 15px; left: 10px; text-align: left;
+          {% when 'bottom-center' %}
+            bottom: 15px; left: 50%; transform: translateX(-50%); text-align: center;
+          {% when 'bottom-right' %}
+            bottom: 15px; right: 10px; text-align: right;
+        {% endcase %}
+        font-size: {{ section.settings.text_font_size }}px; color: {{ section.settings.text_font_color }}; padding: 5px 10px;">
+        <div class="heading" style="font-size: {{ section.settings.heading_font_size }}px; color: {{ section.settings.heading_font_color }}; text-align: {{ section.settings.title_alignment }};">
+          {{ section.settings.heading_text | raw }}
+        </div>
+
+        <div class="text-content" style="font-size: {{ section.settings.text_font_size }}px; color: {{ section.settings.text_font_color }}; text-align: {{ section.settings.title_alignment }}; margin-top: 5px;">
+          {{ section.settings.text_content | raw }}
+        </div>
+
+        <div class="collection-button" style="text-align: center; width: 100%; margin-top: 0px;">
+          {% assign button_style = '' %}
+          {% if section.settings.transparent_button_bg %}
+            {% assign button_style = 'background-color: transparent; padding: 0;' %}
+          {% else %}
+            {% assign button_style = 'background-color: ' | append: section.settings.button_background %}
+          {% endif %}
+
+          {% if section.settings.add_border_to_button %}
+            {% assign button_style = button_style | append: ' border: ' | append: section.settings.button_border_thickness | append: 'px solid ' | append: section.settings.button_border_color %}
+            {% assign button_style = button_style | append: ' padding: 12px 0;' %}
+          {% endif %}
+
+          <a href="{{ section.settings.button_link }}">
+            <button class="collection-btn" 
+                    style="{{ button_style }} 
+                           border-radius: {{ section.settings.button_border_radius }}px;
+                           color: {{ section.settings.button_font_color }}; 
+                           font-size: 16px; 
+                           width: 100%; 
+                           text-align: {% if section.settings.transparent_button_bg == false %} center {% else %} left {% endif %}; 
+                           text-decoration: {% if section.settings.underline_button_text %} underline {% else %} none {% endif %};">
+              {{ section.settings.collection_button_text }} 
+              {% if section.settings.add_arrow %}
+                &#8594;
+              {% endif %}
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+   <div class="product-grid">
+  {% assign collection = collections[section.settings.featured_collection] %}
+  {% if collection.products.size > 0 %}
+    {% for product in collection.products limit:3 %}
+      <div class="product-card" style="background-color: {{ section.settings.card_background_color }};">
+        <a href="{{ product.url }}" style="position: relative; display: block;">
+  <img src="{{ product.featured_image | img_url: '400x400' }}" alt="{{ product.title }}" />
+  {% if product.compare_at_price > product.price %}
+    <div class="discount-badge" style="
+      position: absolute;
+      bottom: 15px;
+      left: 10px;
+      background-color: {{ section.settings.badge_background_color }};
+      color: {{ section.settings.badge_text_color }};
+      padding: 1px 12px;
+      font-size: 13px;
+      font-weight: 400;
+      border-radius: 30px;
+      z-index: 2;">
+      {{ section.settings.badge_text }}
+    </div>
+  {% endif %}
+</a>
+
+        <h3 style="font-size: {{ section.settings.title_font_size }}px; text-align: {{ section.settings.title_alignment }};">
+          {{ product.title }}
+        </h3>
+       {% if product.compare_at_price > product.price %}
+  <p class="product-price">
+    <!-- Kedvezményes ár -->
+    <span class="discounted-price">
+      {{ product.price | money }}
+    </span>
+    <!-- Eredeti ár (áthúzva) -->
+    <span class="original-price" style="text-decoration: line-through; color: gray;">
+      {{ product.compare_at_price | money }}
+    </span>
+  </p>
+{% else %}
+  <p class="product-price">
+    <!-- Normál ár -->
+    <span class="current-price">
+      {{ product.price | money }}
+    </span>
+  </p>
+{% endif %}
+        <form class="add-to-cart-form" data-product-id="{{ product.id }}" method="post" action="/cart/add.js">
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+
+          {% if product.variants.first.inventory_quantity > 0 %}
+            <button type="submit" class="add-to-cart-btn"
+                    style="background-color: {{ section.settings.button_background_color }}; color: {{ section.settings.button_font_color }};">
+              {{ section.settings.product_button_text }}
+            </button>
+          {% else %}
+            <button type="button" class="out-of-stock-btn"
+                    style="background-color: {{ section.settings.out_of_stock_bg_color }}; color: {{ section.settings.out_of_stock_font_color }};"
+                    disabled>
+              {{ section.settings.out_of_stock_text }}
+            </button>
+          {% endif %}
+        </form>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No products found in this collection.</p>
+  {% endif %}
+</div>
+
+  </div>
+</div>
+
+
+<style>
+/* Custom Button Styles */
+
+
+.collection-btn {
+  padding: 12px 0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  margin-top:0px!important;
+}
+
+.collection-btn:hover {
+  opacity: 0.8;
+}
+
+.collection-btn:focus {
+  outline: none;
+}
+
+.add-to-cart-btn {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.add-to-cart-btn:hover {
+  opacity: 0.9;
+}
+
+.add-to-cart-btn:focus {
+  outline: none;
+}
+
+.featured-collection-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.featured-collection {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.collection-image {
+  width: 24%!important;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.collection-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex: 2;
+}
+
+.product-card {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  font-size: 16px!important;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  font-weight:500!important;
+}
+
+.product-card .price {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.product-card .add-to-cart-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 14px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.product-card .add-to-cart-btn:hover {
+  background-color: #0056b3;
+}
+
+p {
+  margin-bottom: 0px!important;
+  margin-top: 0px!important;
+  padding-bottom: 0px!important;
+  padding-top: 0px!important;
+}
+
+  /* Add to Cart Button */
+.add-to-cart-btn {
+  padding: 12px;
+  font-size: 16px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.add-to-cart-btn:hover {
+  opacity: 0.8;
+}
+
+.add-to-cart-btn:focus {
+  outline: none;
+}
+
+/* Out of Stock Button */
+.out-of-stock-btn {
+  padding: 10px;
+  font-size: 14px;
+  width: 100%;
+  border: none;
+  cursor: not-allowed;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.out-of-stock-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.out-of-stock-btn:focus {
+  outline: none;
+}
+
+  .original-price {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.discounted-price {
+  color: black; /* Vagy bármi szín, ami kiemeli a kedvezményt */
+  font-weight:500;
+  font-size:20px;
+}
+
+.current-price {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+  .featured-collection-container {
+    padding: 0 25px; /* Oldalsó padding a mobilon */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .featured-collection {
+    flex-direction: column; /* Egy oszlopos elrendezés mobilon */
+    gap: 20px;
+  }
+
+  .collection-image {
+    width: 100%!important; /* A képek teljes szélességben jelenjenek meg mobilon */
+    height: 300px; /* Fix magasság, így kocka alakúak maradnak */
+    object-fit: cover; /* A képek arányos kitöltése */
+    border-radius: 8px;
+  }
+
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between; /* Eltávolítja a túlzott üres helyeket */
+  }
+
+  .product-card {
+    width: 100%; /* A kártyák teljes szélességben jelenjenek meg */
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 8px;
+    height: auto;
+  }
+
+  .product-card img {
+    height: 300px; /* Kisebb magasság */
+    width: 100%; /* A szélesség teljes kitöltése */
+    object-fit: cover; /* Kép megőrzése a kocka formában */
+  }
+
+  .product-card h3 {
+    font-size: 16px;
+    margin-top: 15px!important;
+  }
+
+  
+  p {
+    margin-bottom: 20px !important;
+    margin-top:10px!important;
+  }
+
+
+  .add-to-cart-btn {
+    width: 100%; /* A gombok teljes szélességben */
+    padding: 12px;
+  }
+}
+
+ 
+
+   
+}
+
+ 
+
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Find all add-to-cart forms and add event listeners
+    const forms = document.querySelectorAll('.add-to-cart-form');
+    
+    forms.forEach(form => {
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();  // Prevent default form submission
+
+        const productId = form.querySelector('[name="id"]').value;
+
+        const data = new FormData();
+        data.append('id', productId);
+        data.append('quantity', 1);  // Always 1 since there's no quantity selector
+
+        // Send AJAX request to add the product to the cart
+        fetch('/cart/add.js', {
+          method: 'POST',
+          body: data
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Product added to cart', data);
+          alert('Product added to your cart!');
+          // Optionally, you can update the cart UI here, or trigger a cart popup
+        })
+        .catch(error => {
+          console.error('Error adding product to cart', error);
+          alert('There was an issue adding the product to your cart.');
+        });
+      });
+    });
+  });
+</script>
+
+
+

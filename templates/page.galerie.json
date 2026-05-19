@@ -1,0 +1,445 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_faeHPW": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_8kdjQp": {
+          "type": "heading",
+          "settings": {
+            "heading": "Galeria Rustic Art",
+            "heading_size": "h1"
+          }
+        },
+        "text_HK3jnN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Aici veți descoperi o colecție unică de piese de mobilier lucrate manual, care îmbină măiestria tradițională cu designul contemporan. Fiecare obiect din această galerie reflectă pasiunea noastră pentru calitate și atenția la detalii, fiind creat pentru a aduce frumusețe și funcționalitate în orice spațiu. Explorați și inspirați-vă din creațiile noastre!</p>"
+          }
+        },
+        "button_gPPCe8": {
+          "type": "button",
+          "settings": {
+            "button_label": "Contactează-ne",
+            "button_link": "shopify://pages/contact",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_8kdjQp",
+        "text_HK3jnN",
+        "button_gPPCe8"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 72,
+        "padding_bottom": 52
+      }
+    },
+    "dalbe_image_gallery_w9rKwk": {
+      "type": "dalbe-image-gallery",
+      "blocks": {
+        "image_fFi79P": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Mobila_de_bucatarie_Cristian.jpg"
+          }
+        },
+        "image_HE6Ern": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/2_a415587b-aef8-40d3-a419-3c6625ec4a83.jpg"
+          }
+        },
+        "image_LFi9im": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/3_7a747622-e552-41fc-bb0c-12074ae135e3.jpg"
+          }
+        },
+        "image_j9yrRp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1_efcc1833-da16-4440-8466-9bc8094bb066.jpg"
+          }
+        },
+        "image_wVYBFj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Masuta_cafea_Romexpo.jpg"
+          }
+        },
+        "image_WpCi8x": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Raft_Felix.jpg"
+          }
+        },
+        "image_XgyJA8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Raft_Akos.jpg"
+          }
+        },
+        "image_NWT74U": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Pat_Marian.jpg"
+          }
+        },
+        "image_gg7jDQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Pat_Mihaela.jpg"
+          }
+        },
+        "image_dJVJW8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Philippe.jpg"
+          }
+        },
+        "image_AcjcPH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Timisoara.jpg"
+          }
+        },
+        "image_99MDHk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Raft_Gerben.jpg"
+          }
+        },
+        "image_fqGmdp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Gabriella.jpg"
+          }
+        },
+        "image_pHtWkf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Consola_din_stejar_vechi.jpg"
+          }
+        },
+        "image_8dXLaB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Consola_din_stejar.jpg"
+          }
+        },
+        "image_eGtpaC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Consola_pin_rustic.jpg"
+          }
+        },
+        "image_jrLQXB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Marco.jpg"
+          }
+        },
+        "image_bqfHTE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Treapta_Dominioni.jpg"
+          }
+        },
+        "image_wLFrQ8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Ibolya.jpg"
+          }
+        },
+        "image_WBn9gM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bernadett.jpg"
+          }
+        },
+        "image_UWy6hr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Alexandria.jpg"
+          }
+        },
+        "image_CFkDHt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Camera_Agnes.jpg"
+          }
+        },
+        "image_yTbBgy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Scara_rustic_art_metalic.jpg"
+          }
+        },
+        "image_MLBBeG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Masa_Peter_9.jpg"
+          }
+        },
+        "image_hYzaA6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Rustic_Art_trepte_scara_lemn_masiv.jpg"
+          }
+        },
+        "image_w7GxQ9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Interior_de_restaurant_cu_mese_din_lemn_masiv_i_scaune_asortate_aranjate_pentru_servirea_mesei.webp"
+          }
+        },
+        "image_7QMkmX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/restaurant_cu_mese_din_lemn.webp"
+          }
+        },
+        "image_dfUamY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/restaurant_modern_mese_din_lemn.webp"
+          }
+        },
+        "image_Acpedd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/pat_lemn_dormitor.webp"
+          }
+        },
+        "image_f4Dcaw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/pat_dormitor_lemn_cu_noptiera.webp"
+          }
+        },
+        "image_CabtF4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/sifonier_lemn_cu_rafturi.webp"
+          }
+        },
+        "image_MBeYxM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/dulap_sufragerie_carti.webp"
+          }
+        },
+        "image_tyGRCB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Mobila_de_bucatarie_rustica.webp"
+          }
+        },
+        "image_NPTPEn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Mobila_de_living.webp"
+          }
+        },
+        "image_xEDh8A": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/doua_dulapuri_din_lemn.webp"
+          }
+        },
+        "image_cDGzni": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Raft-restaurant-pentru-vin.webp"
+          }
+        },
+        "image_MDWrVk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/dulap_living_lemn.webp"
+          }
+        },
+        "image_WymFYB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Masa_de_bucatarie_pentru_servirea_mesei.webp"
+          }
+        },
+        "image_LYrDaz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/M_su_de_cafea_living.webp"
+          }
+        },
+        "image_KQVU8L": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/dormitor_cu_oglinda_si_noptiera.webp"
+          }
+        },
+        "image_Ma6dKe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/mobilier_bucatarie.webp"
+          }
+        },
+        "image_k4gFr4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Masa_de_gradina_si_banca_langa_ea_in_gradina.webp"
+          }
+        },
+        "image_zgVQWF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/mobilier_bucatarie_lemn.webp"
+          }
+        },
+        "image_JkgYAk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Dulap_de_living.webp"
+          }
+        },
+        "image_BiDYmV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Pat_in_dormitor.webp"
+          }
+        },
+        "image_fCHfix": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/mobilier_bucatarie_lemn_2.webp"
+          }
+        },
+        "image_UNrxhP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bucatarie_rustica.webp"
+          }
+        },
+        "image_P8Bfke": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Noptiera.webp"
+          }
+        },
+        "image_XEyDia": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/oglinda_salon_coafura_lemn.webp"
+          }
+        },
+        "image_V7Emn7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/salon_coafura_oglinzi_din_lemn.webp"
+          }
+        },
+        "image_QcQByp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/interioare_unicate.webp"
+          }
+        },
+        "image_MVkFVC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Mobilier_de_baie.webp"
+          }
+        }
+      },
+      "block_order": [
+        "image_fFi79P",
+        "image_HE6Ern",
+        "image_LFi9im",
+        "image_j9yrRp",
+        "image_wVYBFj",
+        "image_WpCi8x",
+        "image_XgyJA8",
+        "image_NWT74U",
+        "image_gg7jDQ",
+        "image_dJVJW8",
+        "image_AcjcPH",
+        "image_99MDHk",
+        "image_fqGmdp",
+        "image_pHtWkf",
+        "image_8dXLaB",
+        "image_eGtpaC",
+        "image_jrLQXB",
+        "image_bqfHTE",
+        "image_wLFrQ8",
+        "image_WBn9gM",
+        "image_UWy6hr",
+        "image_CFkDHt",
+        "image_yTbBgy",
+        "image_MLBBeG",
+        "image_hYzaA6",
+        "image_w7GxQ9",
+        "image_7QMkmX",
+        "image_dfUamY",
+        "image_Acpedd",
+        "image_f4Dcaw",
+        "image_CabtF4",
+        "image_MBeYxM",
+        "image_tyGRCB",
+        "image_NPTPEn",
+        "image_xEDh8A",
+        "image_cDGzni",
+        "image_MDWrVk",
+        "image_WymFYB",
+        "image_LYrDaz",
+        "image_KQVU8L",
+        "image_Ma6dKe",
+        "image_k4gFr4",
+        "image_zgVQWF",
+        "image_JkgYAk",
+        "image_BiDYmV",
+        "image_fCHfix",
+        "image_UNrxhP",
+        "image_P8Bfke",
+        "image_XEyDia",
+        "image_V7Emn7",
+        "image_QcQByp",
+        "image_MVkFVC"
+      ],
+      "settings": {
+        "container_width": "boxed",
+        "image_gap": 10,
+        "padding_top": 20,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_faeHPW",
+    "dalbe_image_gallery_w9rKwk"
+  ]
+}

@@ -1,0 +1,446 @@
+{% schema %}
+{
+  "name": "Image Blocks Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image Blocks Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image Border Radius (px)",
+      "default": 10,
+      "min": 0,
+      "max": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top (px)",
+      "default": 40,
+      "min": 0,
+      "max": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom (px)",
+      "default": 40,
+      "min": 0,
+      "max": 100
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "color",
+          "id": "heading_font_color",
+          "label": "Heading Font Color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "heading_font_size",
+          "label": "Heading Font Size (px)",
+          "default": 24,
+          "min": 12,
+          "max": 72
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "color",
+          "id": "text_font_color",
+          "label": "Text Font Color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "text_font_size",
+          "label": "Text Font Size (px)",
+          "default": 16,
+          "min": 10,
+          "max": 40
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_button",
+          "label": "Show Button",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "use_text_for_button",
+          "label": "Use Text for Button Instead of a Button",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_arrow",
+          "label": "Show Arrow next to Button Text",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button Background Color",
+          "default": "#007bff"
+        },
+        {
+          "type": "color",
+          "id": "button_font_color",
+          "label": "Button Font Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "range",
+          "id": "button_border_radius",
+          "label": "Button Border Radius (px)",
+          "default": 5,
+          "min": 0,
+          "max": 50
+        },
+        {
+          "type": "color",
+          "id": "button_border_color",
+          "label": "Button Border Color",
+          "default": "#007bff"
+        },
+        {
+          "type": "range",
+          "id": "button_border_thickness",
+          "label": "Button Border Thickness (px)",
+          "default": 2,
+          "min": 0,
+          "max": 10
+        },
+        {
+          "type": "select",
+          "id": "text_position",
+          "label": "Text Position",
+          "options": [
+            { "value": "top-left", "label": "Top Left" },
+            { "value": "top-center", "label": "Top Center" },
+            { "value": "top-right", "label": "Top Right" },
+            { "value": "center-left", "label": "Center Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "center-right", "label": "Center Right" },
+            { "value": "bottom-left", "label": "Bottom Left" },
+            { "value": "bottom-center", "label": "Bottom Center" },
+            { "value": "bottom-right", "label": "Bottom Right" }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "checkbox",
+          "id": "make_image_clickable",
+          "label": "Make Image Clickable",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "tags",
+          "label": "Tags (comma separated)",
+          "default": "toate"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Blocks Section",
+      "category": "Custom",
+      "blocks": [
+        { "type": "image" },
+        { "type": "image" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="image-blocks-section" style="background-color: {{ section.settings.background_color }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <!-- Tag gombok -->
+  <div class="tags-container">
+    {% assign unique_tags = "" %}
+    {% for block in section.blocks %}
+      {% if block.settings.tags != blank %}
+        {% assign tags = block.settings.tags | split: "," %}
+        {% for tag in tags %}
+          {% assign tag = tag | strip %}
+          {% unless unique_tags contains tag %}
+            <button class="tag-button" data-tag="{{ tag }}" onclick="filterImages('{{ tag }}')">{{ tag }}</button>
+            {% assign unique_tags = unique_tags | append: tag | append: "," %}
+          {% endunless %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="image-blocks-container">
+    {% for block in section.blocks %}
+      <div class="image-block" data-tags="{{ block.settings.tags | replace: ',', ' ' }}">
+        <div class="image-container">
+          {% if block.settings.image %}
+            {% if block.settings.make_image_clickable %}
+              <a href="{{ block.settings.button_link }}" class="image-link" target="_blank">
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.heading | escape }}" class="image-block-img" style="border-radius: {{ section.settings.image_border_radius }}px;">
+              </a>
+            {% else %}
+              <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.heading | escape }}" class="image-block-img" style="border-radius: {{ section.settings.image_border_radius }}px;">
+            {% endif %}
+          {% else %}
+            <img src="https://via.placeholder.com/600" alt="Placeholder Image" class="image-block-img" style="border-radius: {{ section.settings.image_border_radius }}px;">
+          {% endif %}
+
+          <div class="text-overlay" style="position: absolute; 
+            {% case block.settings.text_position %}
+              {% when 'top-left' %} top: 10px; left: 10px; text-align: left;
+              {% when 'top-center' %} top: 10px; left: 50%; transform: translateX(-50%); text-align: center;
+              {% when 'top-right' %} top: 10px; right: 10px; text-align: right;
+              {% when 'center-left' %} top: 50%; left: 10px; transform: translateY(-50%); text-align: left;
+              {% when 'center' %} top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;
+              {% when 'center-right' %} top: 50%; right: 10px; transform: translateY(-50%); text-align: right;
+              {% when 'bottom-left' %} bottom: 15px; left: 10px; text-align: left;
+              {% when 'bottom-center' %} bottom: 15px; left: 50%; transform: translateX(-50%); text-align: center;
+              {% when 'bottom-right' %} bottom: 15px; right: 10px; text-align: right;
+            {% endcase %}">
+            <div class="text-container">
+              {% if block.settings.heading != blank %}
+                <h2 style="color: {{ block.settings.heading_font_color }}; font-size: {{ block.settings.heading_font_size }}px;">{{ block.settings.heading | richtext }}</h2>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <div style="color: {{ block.settings.text_font_color }}; font-size: {{ block.settings.text_font_size }}px;">{{ block.settings.text | richtext }}</div>
+              {% endif %}
+              {% if block.settings.show_button %}
+                {% if block.settings.use_text_for_button %}
+                  <a href="{{ block.settings.button_link }}" class="text-button {% if block.settings.show_arrow %}with-arrow{% endif %}" aria-label="{{ block.settings.button_label }}">
+                    {{ block.settings.button_label }}
+                    {% if block.settings.show_arrow %}
+                      <span class="arrow">→</span>
+                    {% endif %}
+                  </a>
+                {% else %}
+                  <a href="{{ block.settings.button_link }}" class="button" style="background-color: {{ block.settings.button_bg_color }}; color: {{ block.settings.button_font_color }}; border-radius: {{ block.settings.button_border_radius }}px; border: {{ block.settings.button_border_thickness }}px solid {{ block.settings.button_border_color }};">
+                    {{ block.settings.button_label }}
+                  </a>
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .image-blocks-section {
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .tags-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .tag-button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .tag-button:hover {
+    background-color: #0056b3;
+  }
+
+  .image-blocks-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .image-block {
+    position: relative;
+    overflow: hidden;
+    flex: 1 1 calc(25% - 20px);
+    min-width: 250px;
+    max-width: 300px;
+    display: block;
+  }
+
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+  }
+
+  .image-block-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: auto;
+  }
+
+  .text-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    z-index: 2;
+    padding: 10px;
+  }
+
+  .text-container {
+    position: relative;
+  }
+
+  .text-container h3,
+  .text-container p {
+    margin: 0;
+  }
+
+  .image-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    border-width: {{ block.settings.button_border_thickness }}px;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    color: {{ block.settings.button_font_color }};
+    text-decoration: none;
+    justify-content: center;
+    font-weight: bold;
+  }
+
+  .text-button {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration:none;
+  }
+
+  .with-arrow .arrow {
+    margin-left: 8px;
+  }
+
+  .tag-button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+  .tag-button:hover {
+
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+  .tags-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const defaultTag = 'toate'; // Default active tag
+    filterImages(defaultTag);
+    
+    // Set initial active button
+    const defaultButton = document.querySelector(`.tag-button[data-tag="${defaultTag}"]`);
+    if (defaultButton) {
+      defaultButton.style.backgroundColor = 'black';
+      defaultButton.style.color = 'white';
+    }
+  });
+
+  function filterImages(tag) {
+    const imageBlocks = document.querySelectorAll('.image-block');
+    const tagButtons = document.querySelectorAll('.tag-button');
+    
+    // Remove active class from all buttons
+    tagButtons.forEach(button => {
+      button.style.backgroundColor = 'white';
+      button.style.color = 'black';
+    });
+    
+    // Set active class on clicked button
+    const activeButton = document.querySelector(`.tag-button[data-tag="${tag}"]`);
+    if (activeButton) {
+      activeButton.style.backgroundColor = 'black';
+      activeButton.style.color = 'white';
+    }
+    
+    // Show or hide images based on selected tag
+    imageBlocks.forEach(block => {
+      const tags = block.getAttribute('data-tags').split(' ');
+      if (tags.includes(tag)) {
+        block.style.display = 'block';
+      } else {
+        block.style.display = 'none';
+      }
+    });
+  }
+</script>
+ 
+

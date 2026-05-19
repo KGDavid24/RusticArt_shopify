@@ -1,0 +1,269 @@
+{% schema %}
+{
+  "name": "Email Signup Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "select",
+      "id": "banner_size",
+      "label": "Banner Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Overlay Opacity",
+      "default": 50
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading_text",
+      "label": "Heading Text",
+      "default": "Join Our Newsletter"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "label": "Heading Font Size (px)",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#000000"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "paragraph_text",
+      "label": "Paragraph Text",
+      "default": "Sign up for exclusive offers and updates."
+    },
+    {
+      "type": "range",
+      "id": "paragraph_font_size",
+      "label": "Paragraph Font Size (px)",
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "paragraph_color",
+      "label": "Paragraph Color",
+      "default": "#000000"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "email_placeholder",
+      "label": "Email Placeholder Text",
+      "default": "Enter your email"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button Border Color",
+      "default": "#000000"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subscribe_button_text",
+      "label": "Subscribe Button Text",
+      "default": "Subscribe"
+    },
+    {
+      "type": "range",
+      "id": "input_button_gap",
+      "label": "Gap Between Input and Button (in px)",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "default": 10
+    },
+    {
+      "type": "checkbox",
+      "id": "terms_checkbox",
+      "label": "Enable Terms and Conditions",
+      "default": false
+    },
+    {
+      "type": "inline_richtext",
+      "id": "terms_text",
+      "label": "Terms and Conditions Text",
+      "default": "By subscribing, you agree to our Terms and Conditions."
+    },
+    {
+      "type": "color",
+      "id": "terms_text_color",
+      "label": "Terms and Conditions Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "terms_text_font_size",
+      "label": "Terms and Conditions Font Size (px)",
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "default": 14
+    }
+  ],
+  "presets": [
+    {
+      "name": "Email Signup Section",
+      "category": "Promotional"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="email-signup-section {{ section.settings.banner_size }}">
+  <div class="overlay"></div>
+  <div class="content-container">
+    <h2 class="heading">
+      {{ section.settings.heading_text }}
+    </h2>
+    <p class="paragraph">
+      {{ section.settings.paragraph_text }}
+    </p>
+    <form class="email-form" id="email-form">
+      <div class="email-input-container">
+        <input type="email" placeholder="{{ section.settings.email_placeholder | default: 'Enter your email' }}" required>
+        <button type="submit" id="subscribe-button">{{ section.settings.subscribe_button_text | default: 'Subscribe' }}</button>
+      </div>
+      
+      {% if section.settings.terms_checkbox %}
+        <div class="terms-checkbox-container">
+          <input type="checkbox" id="terms-checkbox" required>
+          <label for="terms-checkbox" style="color: {{ section.settings.terms_text_color }}; font-size: {{ section.settings.terms_text_font_size }}px;">
+            {{ section.settings.terms_text }}
+          </label>
+        </div>
+      {% endif %}
+    </form>
+  </div>
+</div>
+
+<style>
+.email-signup-section {
+  position: relative;
+  background-image: url('{{ section.settings.background_image | image_url }}');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.email-signup-section.small { padding: 20px 10px; }
+.email-signup-section.medium { padding: 50px 20px; }
+.email-signup-section.large { padding: 80px 30px; }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, {{ section.settings.image_overlay_opacity | divided_by: 100.0 }});
+  pointer-events: none;
+  z-index: 0;
+}
+
+.content-container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+h2.heading {
+  font-size: {{ section.settings.heading_font_size }}px;
+  color: {{ section.settings.heading_color }};
+}
+
+p.paragraph {
+  font-size: {{ section.settings.paragraph_font_size }}px;
+  color: {{ section.settings.paragraph_color }};
+}
+
+.email-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email-input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.email-form input {
+  padding: 10px;
+  flex: 1;
+  max-width: 300px;
+}
+
+.email-form button {
+  padding: 10px 20px;
+  background-color: {{ section.settings.button_bg_color }};
+  color: {{ section.settings.button_text_color }};
+  border: 2px solid {{ section.settings.button_border_color }};
+  cursor: pointer;
+  margin-left: {{ section.settings.input_button_gap | default: 10 }}px;
+}
+
+.terms-checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.terms-checkbox-container input {
+  margin-right: 10px;
+}
+
+#subscribe-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+</style>
+
+<script>
+  document.getElementById("email-form").addEventListener("submit", function(event) {
+    if (!document.getElementById("terms-checkbox").checked) {
+      event.preventDefault();
+      alert("Please accept the Terms and Conditions to subscribe.");
+    }
+  });
+</script>

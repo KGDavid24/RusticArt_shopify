@@ -1,0 +1,256 @@
+{% schema %}
+{
+  "name": "3 Images + Text boxes",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+  "type": "richtext",
+  "id": "main_title",
+  "label": "Heading (Title)",
+  "default": "<h2><strong>This is a heading</strong></h2>"
+},
+
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Heading font size (px)",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "richtext",
+      "id": "main_description",
+      "label": "Description",
+      "default": "<p>Description</p>"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "label": "Description size (px)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+
+    { "type": "text", "id": "box1_heading", "label": "1. Heading box", "default": "Heading 1" },
+    { "type": "text", "id": "box1_text", "label": "1. Box text", "default": "Text 1" },
+    { "type": "text", "id": "box2_heading", "label": "2. Heading box", "default": "Heading 2" },
+    { "type": "text", "id": "box2_text", "label": "2. Box text", "default": "Text 2" },
+    { "type": "text", "id": "box3_heading", "label": "3.Heading box", "default": "Heading 3" },
+    { "type": "text", "id": "box3_text", "label": "3. Box text", "default": "Text 3" },
+    { "type": "text", "id": "box4_heading", "label": "4. Heading box", "default": "Heading 4" },
+    { "type": "text", "id": "box4_text", "label": "4. Box text", "default": "Text 4" },
+
+    {
+      "type": "image_picker", "id": "top_image_left", "label": "Top Left Image"
+    },
+    {
+      "type": "range", "id": "top_image_left_width", "label": "Top left Image width (px)", "min": 50, "max": 600, "step": 10, "default": 250
+    },
+    {
+      "type": "range", "id": "top_image_left_height", "label": "Top left Image height (px)", "min": 50, "max": 600, "step": 10, "default": 250
+    },
+
+    {
+      "type": "image_picker", "id": "top_image_right", "label": "Top Right Image"
+    },
+    {
+      "type": "range", "id": "top_image_right_width", "label": "Top Right Image width (px)", "min": 50, "max": 600, "step": 10, "default": 250
+    },
+    {
+      "type": "range", "id": "top_image_right_height", "label": "Top Right Image height (px)", "min": 50, "max": 600, "step": 10, "default": 250
+    },
+
+    {
+      "type": "image_picker", "id": "bottom_image", "label": "Bottom Image (Full width)"
+    },
+    {
+      "type": "range", "id": "bottom_image_width", "label": "Bottom Image width (px)", "min": 100, "max": 1000, "step": 10, "default": 520
+    },
+    {
+      "type": "range", "id": "bottom_image_height", "label": "Bottom Image height (px)", "min": 50, "max": 600, "step": 10, "default": 300
+    }
+  ],
+  "presets": [
+    {
+      "name": "3 Images + Boxes (Resizable)",
+      "category": "Dalbe"
+    }
+  ]
+}
+{% endschema %}
+
+<section style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; background-color: {{ section.settings.bg_color }};">
+  <div class="container-flex">
+    <div class="left-content">
+     <div class="section-title" style="font-size: {{ section.settings.title_size }}px;">
+  <h2 class="main-heading">
+    {{ section.settings.main_title | strip_html }}
+  </h2>
+</div>
+
+
+      <div class="main-desc" style="font-size: {{ section.settings.description_size }}px;">
+        {{ section.settings.main_description }}
+      </div>
+      <div class="boxes-grid">
+  <div class="info-box">
+    <p class="box-heading">{{ section.settings.box1_heading }}</p>
+    <p>{{ section.settings.box1_text }}</p>
+  </div>
+  <div class="info-box">
+    <p class="box-heading">{{ section.settings.box2_heading }}</p>
+    <p>{{ section.settings.box2_text }}</p>
+  </div>
+  <div class="info-box">
+    <p class="box-heading">{{ section.settings.box3_heading }}</p>
+    <p>{{ section.settings.box3_text }}</p>
+  </div>
+  <div class="info-box">
+    <p class="box-heading">{{ section.settings.box4_heading }}</p>
+    <p>{{ section.settings.box4_text }}</p>
+  </div>
+</div>
+
+    </div>
+
+    <div class="right-images">
+      <div class="top-row">
+        {% if section.settings.top_image_left %}
+          <img
+            src="{{ section.settings.top_image_left | image_url }}"
+            style="width: {{ section.settings.top_image_left_width }}px; height: {{ section.settings.top_image_left_height }}px; border-radius: 12px; object-fit: cover;"
+            loading="lazy"
+          />
+        {% endif %}
+        {% if section.settings.top_image_right %}
+          <img
+            src="{{ section.settings.top_image_right | image_url }}"
+            style="width: {{ section.settings.top_image_right_width }}px; height: {{ section.settings.top_image_right_height }}px; border-radius: 12px; object-fit: cover;"
+            loading="lazy"
+          />
+        {% endif %}
+      </div>
+      {% if section.settings.bottom_image %}
+        <div class="bottom-row">
+          <img
+            src="{{ section.settings.bottom_image | image_url }}"
+            style="width: {{ section.settings.bottom_image_width }}px; height: {{ section.settings.bottom_image_height }}px; border-radius: 12px; object-fit: cover;"
+            loading="lazy"
+          />
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .container-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .left-content {
+    flex: 1 1 45%;
+  }
+
+  .section-title {
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+
+  .main-desc {
+    margin-bottom: 30px;
+  }
+
+  .boxes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .info-box {
+    background: #543c2b;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .box-heading {
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #e6d5b9!important;
+  font-size: 30px;
+  margin-top: 0px;
+}
+
+
+  .right-images {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .top-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .bottom-row {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  
+  @media (max-width: 768px) {
+    .container-flex {
+      flex-direction: column;
+    }
+
+    .top-row {
+      flex-direction: column;
+    }
+
+    .top-row img,
+    .bottom-row img {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+</style>

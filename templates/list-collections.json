@@ -1,0 +1,152 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_6xAUeq": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_7HKEAQ": {
+          "type": "caption",
+          "settings": {
+            "caption": "Magazin Online Rustic Art",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_RchmCw": {
+          "type": "heading",
+          "settings": {
+            "heading": "Fii inspirat, rămâi uimit",
+            "heading_size": "h1"
+          }
+        },
+        "text_wW4c7y": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Iată selecția noastră de mobilier rustic pe care îl vom realiza manual pentru tine.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "caption_7HKEAQ",
+        "heading_RchmCw",
+        "text_wW4c7y"
+      ],
+      "custom_css": [
+        ".caption-with-letter-spacing--large {text-transform: uppercase; color: black; font-size: 18px; font-weight: 300; margin-bottom: 0px;}",
+        "h2 {color: black; font-size: 40px; font-weight: 700; margin-top: 5px;}",
+        "p {color: black; font-size: 16px; font-weight: 400; margin-bottom: 0px;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 68,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_7D7yk9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_dcMDaz": {
+          "type": "heading",
+          "settings": {
+            "heading": "Toate categoriile",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_dcMDaz"
+      ],
+      "custom_css": [
+        ".caption-with-letter-spacing--large {text-transform: uppercase; color: black; font-size: 18px; font-weight: 300; margin-bottom: 0px;}",
+        "h2 {color: black; font-size: 40px; font-weight: 700; margin-top: 5px;}",
+        "p {color: black; font-size: 16px; font-weight: 400; margin-bottom: 0px;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 32,
+        "padding_bottom": 28
+      }
+    },
+    "main": {
+      "type": "main-list-collections",
+      "settings": {
+        "title": "",
+        "sort": "alphabetical",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "columns_mobile": "2"
+      }
+    },
+    "collection_list_Ha6FEA": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_gCbTdA": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_YakHHb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_nyiPYM": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_gCbTdA",
+        "featured_collection_YakHHb",
+        "featured_collection_nyiPYM"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_MUbTYd": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "",
+        "padding_top": 44,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "rich_text_6xAUeq",
+    "rich_text_7D7yk9",
+    "main",
+    "collection_list_Ha6FEA",
+    "custom_liquid_MUbTYd"
+  ]
+}

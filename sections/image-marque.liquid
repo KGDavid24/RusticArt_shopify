@@ -1,0 +1,113 @@
+{% schema %}
+{
+  "name": "Image Marquee",
+  "settings": [
+    {
+      "type": "select",
+      "id": "scroll_direction",
+      "label": "Scroll Direction",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "marquee_speed",
+      "label": "Marquee Speed",
+      "min": 1,
+      "max": 100,  /* A sebességértékek módosítása */
+      "default": 50,  /* Lassított alapérték */
+      "unit": "s"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Image Marquee",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.image-marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+}
+
+.image-marquee-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;  /* A track szélességét a képek szélessége alapján határozzuk meg */
+  animation: scroll-animation {{ section.settings.marquee_speed | default: 50 }}s linear infinite;
+}
+
+.image-marquee-track img {
+  max-height: 250px;
+  width: auto;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
+@keyframes scroll-animation {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.image-marquee-container[data-direction="right"] .image-marquee-track {
+  animation-direction: reverse;
+}
+</style>
+
+<div class="image-marquee-container" data-direction="{{ section.settings.scroll_direction }}">
+  <div class="image-marquee-track">
+    {% for block in section.blocks %}
+      {% if block.settings.image %}
+        <img src="{{ block.settings.image | img_url: '600x' }}" alt="Marquee Image">
+      {% endif %}
+    {% endfor %}
+    {% for block in section.blocks %}
+      {% if block.settings.image %}
+        <img src="{{ block.settings.image | img_url: '600x' }}" alt="Marquee Image">
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

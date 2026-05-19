@@ -1,0 +1,179 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_with_text_tcjAfT": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_PBan3R": {
+          "type": "heading",
+          "settings": {
+            "heading": "Mobilier și interioare rustice de înaltă calitate pentru restaurante",
+            "heading_size": "h1"
+          }
+        },
+        "text_qXkEML": {
+          "type": "text",
+          "settings": {
+            "text": "<p>La Rustic Art, transformăm visul tău în realitate prin crearea de interioare rustice personalizate pentru restaurante. Utilizăm lemn masiv sustenabil, inclusiv lemn reciclat, pentru a realiza piese unice și durabile. Fiecare proiect este o operă de artă realizată manual, adaptată perfect stilului și atmosferei restaurantului tău.<br/><br/>Dacă dorești să renovezi sau să deschizi un nou restaurant, Rustic Art este partenerul ideal pentru design interior de înaltă calitate. Împreună vom crea un spațiu cald și autentic, perfect pentru a atrage clienți și a oferi o experiență de neuitat.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_e89WjP": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_PBan3R",
+        "text_qXkEML",
+        "button_e89WjP"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/440440107_831529682342875_7780872312981988813_n-1024x680.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_GwEGtr": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_B7YNB4": {
+          "type": "heading",
+          "settings": {
+            "heading": "De ce să Alegi Rustic Art?",
+            "heading_size": "h1"
+          }
+        },
+        "text_MnLBdX": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Design Personalizat</strong>: Lucrăm împreună pentru a concepe și a realiza interioare unice, fie că este vorba de bucătării, săli de mese, dormitoare cu paturi, dulapuri, rafturi și multe altele.<br/><br/><strong>Calitate Superioară</strong>: Fiecare detaliu este executat cu atenție și măiestrie, asigurându-ne că proiectele noastre sunt durabile și estetice.<br/><br/><strong>Sustenabilitate</strong>: Utilizăm doar materiale naturale și reciclate, contribuind astfel la protejarea mediului.<br/><br/><strong>Montaj Profesional</strong>: Echipa noastră se ocupă de tot, de la design și producție până la montaj, pentru a asigura un rezultat perfect.<br/><br/><strong>Impact social</strong>: Rustic Art a început din dorința de a crea locuri de muncă și de a susține activ ONG-uri care se ocupă cu educația pentru copii vulnerabili.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_KfQg6E": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_B7YNB4",
+        "text_MnLBdX",
+        "button_KfQg6E"
+      ],
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_YnpFxp": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_r9CgEX": {
+          "type": "heading",
+          "settings": {
+            "heading": "Procesul nostru",
+            "heading_size": "h1"
+          }
+        },
+        "text_ThXrfz": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Consultare Inițială</strong>: Ascultăm ideile și dorințele tale, evaluăm spațiul și discutăm despre posibilitățile de design.<br/><br/><strong>Proiectare Personalizată</strong>: Creăm un design unic care să reflecte stilul tău și să îmbunătățească funcționalitatea spațiului.<br/><br/><strong>Producție de Înaltă Calitate</strong>: Fiecare piesă este realizată manual în atelierul nostru, utilizând cele mai bune materiale.<br/><br/><strong>Montaj</strong>: Ne ocupăm de montajul profesional al mobilierului, asigurându-ne că totul se potrivește perfect și este gata de utilizare.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_XLHrzN": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_r9CgEX",
+        "text_ThXrfz",
+        "button_XLHrzN"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/mobilier_restaurant_rustic_art_page_image.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "contact_form_RCwdtB": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Contactează-ne prin acest formular",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_tcjAfT",
+    "image_with_text_GwEGtr",
+    "image_with_text_YnpFxp",
+    "contact_form_RCwdtB"
+  ]
+}

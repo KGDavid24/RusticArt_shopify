@@ -1,0 +1,250 @@
+{% schema %}
+{
+  "name": "Text",
+  "settings": [
+    {
+      "type": "range",
+      "id": "text_width",
+      "label": "Text width (px)",
+      "min": 200,
+      "max": 800,
+      "step": 10,
+      "default": 400,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size (px)",
+      "min": 20,
+      "max": 50,
+      "step": 2,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "label": "Subheading size (px)",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Text size (px)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<p><strong>Heading</strong></p>"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p><strong>Subheading</strong></p>"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Description",
+      "default": "<p>This is a paragraph of text that can break into multiple lines, with images appearing to the right of it.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image blokk",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "label": "Image width (px)",
+          "min": 100,
+          "max": 400,
+          "step": 10,
+          "default": 150,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "image_height",
+          "label": "Image height (px)",
+          "min": 100,
+          "max": 400,
+          "step": 10,
+          "default": 150,
+          "unit": "px"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 2,
+  "presets": [
+    {
+      "name": "Text + 2 images (in one line)",
+      "category": "Dalbe"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="text-image-inline-section" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="inline-wrapper">
+    <div class="text-side" style="width: {{ section.settings.text_width }}px;">
+      
+      <!-- Subheading (Alcím) -->
+      {% if section.settings.subheading %}
+        <div class="text-subheading" style="font-size: {{ section.settings.subheading_size }}px;">
+          {{ section.settings.subheading }}
+        </div>
+      {% endif %}
+
+      <!-- Cím -->
+      <div class="text-title" style="font-size: {{ section.settings.heading_size }}px;">
+        {{ section.settings.title }}
+      </div>
+
+      <!-- Szöveg -->
+      <div class="text-body" style="font-size: {{ section.settings.body_size }}px;">
+        {{ section.settings.body }}
+      </div>
+    </div>
+
+    <div class="images-side">
+      {% for block in section.blocks %}
+        {% if block.settings.image %}
+          <div class="image-box" style="width: {{ block.settings.image_width }}px; height: {{ block.settings.image_height }}px;">
+            <img
+              src="{{ block.settings.image | image_url }}"
+              alt=""
+              loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px;"
+            />
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .text-image-inline-section {
+    background-color: #fff;
+    width: 100%;
+    max-width: 1200px;  /* 1200px szélesség */
+    margin: 0 auto;     /* Középre igazítja a szekciót */
+    padding-right:40px;
+    padding-left:40px;
+  }
+
+  .inline-wrapper {
+    display: flex;
+    justify-content: space-between;  /* Képek és szöveg közötti elhelyezés */
+    gap: 20px;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  .text-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2; /* Csökkenti a sorok közötti távolságot */
+  }
+
+  .text-subheading {
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #888;
+  }
+
+  p {
+    margin: 0px !important;
+    padding: 0px !important;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: black;
+  }
+
+  .images-side {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-shrink: 0;
+  }
+
+  .image-box {
+    overflow: hidden;
+  }
+
+  @media (max-width: 900px) {
+    .inline-wrapper {
+      flex-direction: column;
+    }
+
+    .text-side,
+    .images-side {
+      max-width: 100%;
+      width: 100% !important;
+    }
+
+    .images-side {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Képek szélességét auto-ra állítjuk mobil nézetben */
+    .image-box img {
+      width: auto !important;
+      height: auto;
+      max-width: 100%;
+    }
+    .text-image-inline-section {
+    background-color: #fff;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+    .images-side {
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+  }
+</style>

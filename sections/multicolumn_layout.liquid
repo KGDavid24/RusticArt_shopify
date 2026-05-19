@@ -1,0 +1,384 @@
+{% schema %}
+{
+  "name": "Multi-Column",
+  "settings": [
+    {
+      "type": "color",
+      "id": "section_background_color",
+      "label": "Section Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "number",
+      "id": "section_padding_top",
+      "label": "Section Padding Top (px)",
+      "default": 20
+    },
+    {
+      "type": "number",
+      "id": "section_padding_bottom",
+      "label": "Section Padding Bottom (px)",
+      "default": 20
+    },
+    {
+      "type": "number",
+      "id": "section_padding_left",
+      "label": "Section Padding Left (px)",
+      "default": 20
+    },
+    {
+      "type": "number",
+      "id": "section_padding_right",
+      "label": "Section Padding Right (px)",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "multi_column_block",
+      "name": "Column Block",
+      "settings": [
+        {
+          "type": "number",
+          "id": "column_padding_top",
+          "label": "Column Padding Top (px)",
+          "default": 20
+        },
+        {
+          "type": "number",
+          "id": "column_padding_bottom",
+          "label": "Column Padding Bottom (px)",
+          "default": 20
+        },
+        {
+          "type": "number",
+          "id": "column_padding_left",
+          "label": "Column Padding Left (px)",
+          "default": 20
+        },
+        {
+          "type": "number",
+          "id": "column_padding_right",
+          "label": "Column Padding Right (px)",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "column_border_radius",
+          "label": "Column Border Radius",
+          "default": 5,
+          "min": 0,
+          "max": 50,
+          "step": 1
+        },
+        {
+          "type": "image_picker",
+          "id": "column_image",
+          "label": "Column Image"
+        },
+        {
+          "type": "range",
+          "id": "column_image_size",
+          "label": "Column Image Size (px)",
+          "default": 300,
+          "min": 10,
+          "max": 800,
+          "step": 10
+        },
+        {
+          "type": "select",
+          "id": "column_image_alignment",
+          "label": "Column Image Alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text Alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "column_heading",
+          "label": "Column Heading",
+          "default": "Heading"
+        },
+        {
+          "type": "range",
+          "id": "column_heading_font_size",
+          "label": "Column Heading Font Size (px)",
+          "default": 24,
+          "min": 10,
+          "max": 60,
+          "step": 1
+        },
+        {
+          "type": "color",
+          "id": "column_heading_color",
+          "label": "Column Heading Text Color",
+          "default": "#000000"
+        },
+        {
+          "type": "number",
+          "id": "column_heading_padding_top",
+          "label": "Column Heading Padding Top (px)",
+          "default": 10
+        },
+        {
+          "type": "number",
+          "id": "column_heading_padding_bottom",
+          "label": "Column Heading Padding Bottom (px)",
+          "default": 10
+        },
+        {
+          "type": "inline_richtext",
+          "id": "column_text",
+          "label": "Column Text",
+          "default": "Your text goes here."
+        },
+        {
+          "type": "color",
+          "id": "column_text_color",
+          "label": "Column Text Color",
+          "default": "#333333"
+        },
+        {
+          "type": "range",
+          "id": "column_text_font_size",
+          "label": "Column Text Font Size (px)",
+          "default": 16,
+          "min": 10,
+          "max": 30,
+          "step": 1
+        },
+        {
+          "type": "number",
+          "id": "column_text_padding_top",
+          "label": "Column Text Padding Top (px)",
+          "default": 10
+        },
+        {
+          "type": "number",
+          "id": "column_text_padding_bottom",
+          "label": "Column Text Padding Bottom (px)",
+          "default": 10
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Click Here"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "color",
+          "id": "button_background_color",
+          "label": "Button Background Color",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "select",
+          "id": "button_alignment",
+          "label": "Button Alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_arrow",
+          "label": "Show Arrow after Button Text",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "is_simple_button",
+          "label": "Use Simple Text Button",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "button_bold_text",
+          "label": "Bold Button Text",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "button_border_radius",
+          "label": "Button Border Radius",
+          "default": 5,
+          "min": 0,
+          "max": 50,
+          "step": 1
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="custom-multi-column-section" style="background-color: {{ section.settings.section_background_color }}; padding-top: {{ section.settings.section_padding_top }}px; padding-bottom: {{ section.settings.section_padding_bottom }}px; padding-left: {{ section.settings.section_padding_left }}px; padding-right: {{ section.settings.section_padding_right }}px;">
+  <div class="container">
+    <div class="columns-wrapper">
+      {% for block in section.blocks %}
+        <div class="custom_column"
+          style="padding-top: {{ block.settings.column_padding_top }}px;
+          padding-bottom: {{ block.settings.column_padding_bottom }}px;
+          padding-left: {{ block.settings.column_padding_left }}px;
+          padding-right: {{ block.settings.column_padding_right }}px;
+          border-radius: {{ block.settings.column_border_radius }}px;">
+          
+          {% if block.settings.column_image %}
+            <div class="column-image" style="display: flex; justify-content: {{ block.settings.column_image_alignment }};">
+              <img src="{{ block.settings.column_image | img_url: 'original' }}" width="{{ block.settings.column_image_size }}" height="auto" alt="{{ block.settings.column_heading }}" />
+            </div>
+          {% endif %}
+          
+          <div class="column-heading" style="font-size: {{ block.settings.column_heading_font_size }}px; color: {{ block.settings.column_heading_color }}; text-align: {{ block.settings.text_alignment }}; padding-top: {{ block.settings.column_heading_padding_top }}px; padding-bottom: {{ block.settings.column_heading_padding_bottom }}px;">
+            {{ block.settings.column_heading | raw }}
+          </div>
+          
+          <div class="column-text" style="font-size: {{ block.settings.column_text_font_size }}px; color: {{ block.settings.column_text_color }}; text-align: {{ block.settings.text_alignment }}; padding-top: {{ block.settings.column_text_padding_top }}px; padding-bottom: {{ block.settings.column_text_padding_bottom }}px;">
+            {{ block.settings.column_text | raw }}
+          </div>
+          
+          {% if block.settings.button_text != blank %}
+            <div class="button-wrapper" style="text-align: {{ block.settings.button_alignment }};">
+              {% if block.settings.is_simple_button %}
+                <a href="{{ block.settings.button_link }}" class="simple-button" style="color: {{ block.settings.button_text_color }}; 
+                {% if block.settings.button_bold_text %} font-weight: bold; {% else %} font-weight: normal; {% endif %}">
+                  {{ block.settings.button_text }}{% if block.settings.show_arrow %}<span class="arrow">→</span>{% endif %}
+                </a>
+              {% else %}
+                <a href="{{ block.settings.button_link }}" class="custom-button" style="background-color: {{ block.settings.button_background_color }}; color: {{ block.settings.button_text_color }}; font-weight: 
+                {% if block.settings.button_bold_text %} bold {% else %} normal {% endif %}; border-radius: {{ block.settings.button_border_radius }}px;">
+                  {{ block.settings.button_text }}{% if block.settings.show_arrow %}<span class="arrow">→</span>{% endif %}
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .custom-multi-column-section {
+    width: 100%;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .columns-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .custom_column {
+    flex: 1 1 calc(25% - 20px);
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: white;
+    border-radius: var(--column-border-radius, 5px);
+    text-align: center;
+  }
+
+  .column-image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .column-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .column-heading {
+    font-size: var(--column-heading-font-size, 24px);
+  }
+
+  .column-text {
+    font-size: var(--column-text-font-size, 16px);
+    color: #333;
+  }
+
+  .button-wrapper {
+    margin-top: 15px;
+  }
+
+  .custom-button, .simple-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+
+  .simple-button {
+    padding: 0;
+    text-align: center;
+    font-weight: normal;
+  }
+
+  .custom-button:hover, .simple-button:hover {
+    opacity: 0.8;
+  }
+
+  .arrow {
+    margin-left: 8px;
+  }
+
+  /* Mobile styles */
+  @media screen and (max-width: 768px) {
+    .custom_column {
+      flex: 1 1 100%; /* One column per row */
+      padding: 10px; /* Remove extra padding on mobile */
+    }
+
+    .columns-wrapper {
+      flex-direction: column; /* Stack columns vertically */
+    }
+
+    .column-heading,
+    .column-text {
+      padding-top: 0; /* Remove padding-top for mobile */
+      padding-bottom: 0; /* Remove padding-bottom for mobile */
+    }
+  }
+</style>

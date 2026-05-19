@@ -1,0 +1,140 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_7k8tVC": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Y6t9bF": {
+          "type": "heading",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "text_q7xGwd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Y6t9bF",
+        "text_q7xGwd"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_9wmdDc": {
+      "type": "rich-text",
+      "blocks": {
+        "text_YUBdTd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store. Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p><p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p><p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p><p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p><p></p><p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_YUBdTd"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "featured_product_BVpCxf": {
+      "type": "featured-product",
+      "blocks": {
+        "text_VQ4G3N": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_GmfCEM": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_3mh8qU": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_LKfcBz": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_xfNAha": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_rbNDHd": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_Ew79DB": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_VQ4G3N",
+        "title_GmfCEM",
+        "price_3mh8qU",
+        "variant_picker_LKfcBz",
+        "quantity_selector_xfNAha",
+        "buy_buttons_rbNDHd",
+        "share_Ew79DB"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "rich_text_7k8tVC",
+    "rich_text_9wmdDc",
+    "featured_product_BVpCxf"
+  ]
+}

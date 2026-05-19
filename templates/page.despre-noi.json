@@ -1,0 +1,271 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_with_text_riFJXY": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_hjtT3b": {
+          "type": "caption",
+          "settings": {
+            "caption": "Barna Gabor",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_xNVni4": {
+          "type": "heading",
+          "settings": {
+            "heading": "Despre Rustic Art",
+            "heading_size": "h1"
+          }
+        },
+        "text_QHpFa7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Recycleart a fost fondat de către Barni Gabor în 2016 și a construit un drum cu modul său autentic de a proiecta și construi mobilier din materiale naturale și reciclate pentru case și afaceri din întreaga Europă. În 2019, s-a unit cu afacerea socială Roman Works și împreună am lansat brandul Rustic Art. Am construit mobilier pentru cafenele, brutării, restaurante, hoteluri, frizerii, cabane și multe altele.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "caption_hjtT3b",
+        "heading_xNVni4",
+        "text_QHpFa7"
+      ],
+      "custom_css": [
+        "h3 {font-weight: 700; font-size: 40px;}",
+        "p {color: black;}",
+        ".multicolumn-card__info .link {text-decoration: none; font-size: inherit; margin-top: 1.5rem; background-color: black; color: white; padding: 10px; padding-right: 15px; padding-left: 15px;}",
+        "@media (max-width: 768px) {h3 {font-weight: 700; font-size: 30px; text-align: left; } p {color: black; text-align: left; } .link {cursor: pointer; display: block; margin-top: 30px !important; }}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/interioare_unicate.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "rich_text_7rzqFt": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_WpQHWT": {
+          "type": "caption",
+          "settings": {
+            "caption": "RAPORTAJ",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_j8H679": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Produsele Rustic Art sunt făcute </strong><span style=\"text-decoration:underline\"><strong>într-un sat mic</strong></span><strong>, chiar lângă </strong><span style=\"text-decoration:underline\"><strong>Târgu Mureș, România</strong></span><strong>!</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_KkjmkW": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Un reportaj scurt despre întreprinderea și proiectul nostru. Realizăm proiecte unice de înaltă calitate, creând în același timp un impact social. Din lemn reciclat, dar și din lemn natur masiv din esențe diferite.</h3>"
+          }
+        }
+      },
+      "block_order": [
+        "caption_WpQHWT",
+        "heading_j8H679",
+        "text_KkjmkW"
+      ],
+      "custom_css": [
+        "p {text-transform: uppercase; color: black; font-weight: 300; margin-bottom: 0px;}",
+        "h2 {color: black; font-size: 40px; font-weight: 700; margin-top: 5px;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 28
+      }
+    },
+    "video_LAzbRp": {
+      "type": "video",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https://www.youtube.com/watch?v=ozxok4gXX9M&t=318s",
+        "cover_image": "shopify://shop_images/Despre_Noi_Video.png",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 64
+      }
+    },
+    "image_with_text_TxEje3": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_6mQapU": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Impact Social</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_KCNdF6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Rustic Art este co-fondată de Asociația Roman Works și Asociația Coming Home Romania, având misiunea de a crea locuri de muncă pentru persoanele aflate în dificultate pe piața muncii. Rustic Art oferă oportunități pentru oameni cu un trecut marcat de adicție, din comunități defavorizate și din zone rurale, unde accesul la un loc de muncă este limitat.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6mQapU",
+        "text_KCNdF6"
+      ],
+      "custom_css": [
+        "h2 {color: black; font-size: 40px; font-weight: 700; margin-top: 5px;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Echipa_lucreaza.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_CewT3D": {
+      "type": "rich-text",
+      "blocks": {
+        "text_LNkUbG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pe lângă asta, primim tineri ce sunt provocați din punct de vedere al gândirii, pentru activități de zi cu zi în și în jurul atelierului. Pentru asta, lucrăm împreună cu organizații ca și Bonus Pastor foundation, TiMuLazu și Coming Home Ministries. O parte din profit este donată anual către Asociația Coming Home Romania.</p>"
+          }
+        },
+        "button_TpwRK8": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "shopify://pages/contact",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_LNkUbG",
+        "button_TpwRK8"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_VxXzit": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_GJmzaz": {
+          "type": "caption",
+          "settings": {
+            "caption": "Ai un proiect? Vrei să ne contactezi?",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_HYYczr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Completează formularul!",
+            "heading_size": "h1"
+          }
+        },
+        "text_8AtNmq": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Revenim de obicei in aceleasi zi (de lucru) cu un răspuns!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "caption_GJmzaz",
+        "heading_HYYczr",
+        "text_8AtNmq"
+      ],
+      "custom_css": [
+        ".caption-with-letter-spacing--large {text-transform: uppercase; color: black; font-size: 18px; font-weight: 300; margin-bottom: 0px;}",
+        "h2 {color: black; font-size: 40px; font-weight: 700; margin-top: 5px;}",
+        "p {color: black; font-size: 16px; font-weight: 400; margin-bottom: 0px;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "contact_form_iWiX96": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_riFJXY",
+    "rich_text_7rzqFt",
+    "video_LAzbRp",
+    "image_with_text_TxEje3",
+    "rich_text_CewT3D",
+    "rich_text_VxXzit",
+    "contact_form_iWiX96"
+  ]
+}

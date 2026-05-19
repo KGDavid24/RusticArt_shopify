@@ -1,0 +1,229 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "dalbe_image_with_text_FkGWci": {
+      "type": "dalbe-image-with-text",
+      "blocks": {
+        "image_jtzUcP": {
+          "type": "image",
+          "settings": {
+            "image": "{{ metaobject.image1.value }}",
+            "image_width": 250,
+            "image_height": 380
+          }
+        },
+        "image_7BkxWF": {
+          "type": "image",
+          "settings": {
+            "image": "{{ metaobject.image2.value }}",
+            "image_width": 250,
+            "image_height": 380
+          }
+        }
+      },
+      "block_order": [
+        "image_jtzUcP",
+        "image_7BkxWF"
+      ],
+      "custom_css": [],
+      "settings": {
+        "text_width": 580,
+        "heading_size": 32,
+        "subheading_size": 18,
+        "body_size": 16,
+        "padding_top": 100,
+        "padding_bottom": 80,
+        "title": "<h2><strong>{{ metaobject.title.value }}</strong></h2>",
+        "subheading": "<p>{{ metaobject.subtitle.value }}</p>",
+        "body": "<p>{{ metaobject.description | metafield_tag }}</p>"
+      }
+    },
+    "dalbe_one_image_with_text_hRAEAd": {
+      "type": "dalbe-one-image-with-text",
+      "blocks": {
+        "single_image_block_XkcaR7": {
+          "type": "single_image_block",
+          "settings": {
+            "image_2": "{{ metaobjects.de_ce_sa_alegi_rustic_art[\"contacteaza-ne\"].image.value }}",
+            "image_width_2": 460,
+            "image_height_2": 520
+          }
+        },
+        "button_block_wpqhDe": {
+          "type": "button_block",
+          "settings": {
+            "button_text": "{{ metaobjects.de_ce_sa_alegi_rustic_art[\"contacteaza-ne\"].button_label.value }}",
+            "button_link": "shopify://pages/contact",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "single_image_block_XkcaR7",
+        "button_block_wpqhDe"
+      ],
+      "custom_css": [
+        "strong {font-weight: 700;}"
+      ],
+      "settings": {
+        "padding_top_2": 0,
+        "padding_bottom_2": 80,
+        "text_width_2": 610,
+        "subheading_size_2": 16,
+        "heading_size_2": 30,
+        "body_size_2": 16,
+        "wrapper_background": "#f7f7f7",
+        "layout_direction": "image-left",
+        "text_alignment": "left",
+        "subheading_2": "",
+        "heading_2": "{{ metaobjects.de_ce_sa_alegi_rustic_art[\"contacteaza-ne\"].heading | metafield_tag }}",
+        "body_2": "{{ metaobjects.de_ce_sa_alegi_rustic_art[\"contacteaza-ne\"].description | metafield_tag }}"
+      }
+    },
+    "dalbe_one_image_with_text_iVhcMH": {
+      "type": "dalbe-one-image-with-text",
+      "blocks": {
+        "single_image_block_7GHaPE": {
+          "type": "single_image_block",
+          "settings": {
+            "image_2": "{{ metaobjects.procesul_nostru[\"contacteaza-ne\"].image.value }}",
+            "image_width_2": 460,
+            "image_height_2": 440
+          }
+        },
+        "button_block_J6qEXL": {
+          "type": "button_block",
+          "settings": {
+            "button_text": "{{ metaobjects.procesul_nostru[\"contacteaza-ne\"].button_label.value }}",
+            "button_link": "shopify://pages/contact",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "single_image_block_7GHaPE",
+        "button_block_J6qEXL"
+      ],
+      "custom_css": [
+        "strong {font-weight: 700;}"
+      ],
+      "settings": {
+        "padding_top_2": 0,
+        "padding_bottom_2": 80,
+        "text_width_2": 550,
+        "subheading_size_2": 16,
+        "heading_size_2": 30,
+        "body_size_2": 16,
+        "wrapper_background": "#f7f7f7",
+        "layout_direction": "image-right",
+        "text_alignment": "right",
+        "subheading_2": "",
+        "heading_2": "<p>{{ metaobjects.procesul_nostru[\"contacteaza-ne\"].heading | metafield_tag }}</p>",
+        "body_2": "<p>{{ metaobjects.procesul_nostru[\"contacteaza-ne\"].description | metafield_tag }}</p>"
+      }
+    },
+    "dalbe_despre_firma_PRinB9": {
+      "type": "dalbe-despre-firma",
+      "custom_css": [
+        "p {color: white;}",
+        "h2 {color: white; font-weight: 700; font-size: 30px;}"
+      ],
+      "settings": {
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "bg_color": "#6f4e38",
+        "main_title": "{{ metaobjects.despre_rustic_art[\"despre-rustic-art\"].title_of_section | metafield_tag }}",
+        "title_size": 28,
+        "main_description": "{{ metaobjects.despre_rustic_art[\"despre-rustic-art\"].description | metafield_tag }}",
+        "description_size": 16,
+        "box1_heading": "{{ metaobjects.despre_rustic_art[\"despre-rustic-art\"].field_1_title.value }}",
+        "box1_text": "{{ metaobjects.despre_rustic_art[\"despre-rustic-art\"].field_1_data.value }}",
+        "box2_heading": "{{ metaobjects.despre_rustic_art[\"despre-rustic-art\"].field_2_title.value }}",
+        "box2_text": "{{ metaobjects.despre_rustic_art[\"despre-rustic-art\"].field_2_data.value }}",
+        "box3_heading": "{{ metaobjects.despre_rustic_art[\"despre-rustic-art\"].field_3_title.value }}",
+        "box3_text": "{{ metaobjects.despre_rustic_art[\"despre-rustic-art\"].field_3_data.value }}",
+        "box4_heading": "{{ metaobjects.despre_rustic_art[\"despre-rustic-art\"].field_4_title.value }}",
+        "box4_text": "{{ metaobjects.despre_rustic_art[\"despre-rustic-art\"].field_4_data.value }}",
+        "top_image_left": "{{ metaobjects.despre_rustic_art[\"despre-rustic-art\"].image_1.value }}",
+        "top_image_left_width": 250,
+        "top_image_left_height": 220,
+        "top_image_right": "{{ metaobjects.despre_rustic_art[\"despre-rustic-art\"].image_2.value }}",
+        "top_image_right_width": 250,
+        "top_image_right_height": 220,
+        "bottom_image": "{{ metaobjects.despre_rustic_art[\"despre-rustic-art\"].image_3.value }}",
+        "bottom_image_width": 520,
+        "bottom_image_height": 230
+      }
+    },
+    "rich_text_xegWaG": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_8he7d9": {
+          "type": "caption",
+          "settings": {
+            "caption": "Ai un proiect? Vrei să ne contactezi?",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_iVdH8y": {
+          "type": "heading",
+          "settings": {
+            "heading": "Contactează-ne prin acest formular",
+            "heading_size": "h1"
+          }
+        },
+        "text_EE7Aix": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Revenim de obicei in aceleasi zi (de lucru) cu un răspuns!<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "caption_8he7d9",
+        "heading_iVdH8y",
+        "text_EE7Aix"
+      ],
+      "custom_css": [
+        ".caption-with-letter-spacing--large {text-transform: uppercase; color: black; font-size: 18px; font-weight: 300; margin-bottom: 0px;}",
+        "h2 {color: black; font-size: 40px; font-weight: 700; margin-top: 5px;}",
+        "p {color: black; font-size: 16px; font-weight: 400; margin-bottom: 0px;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 8
+      }
+    },
+    "contact_form_fhRan9": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-2",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "dalbe_image_with_text_FkGWci",
+    "dalbe_one_image_with_text_hRAEAd",
+    "dalbe_one_image_with_text_iVhcMH",
+    "dalbe_despre_firma_PRinB9",
+    "rich_text_xegWaG",
+    "contact_form_fhRan9"
+  ]
+}

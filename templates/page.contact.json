@@ -1,0 +1,138 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_8qAXJW": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_dYPtXk": {
+          "type": "caption",
+          "settings": {
+            "caption": "Rustic Art",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_feKB8Y": {
+          "type": "heading",
+          "settings": {
+            "heading": "CONTACTEAZĂ-NE",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "caption_dYPtXk",
+        "heading_feKB8Y"
+      ],
+      "custom_css": [
+        ".caption-with-letter-spacing--large {text-transform: uppercase; color: black; font-size: 18px; font-weight: 300; margin-bottom: 0px;}",
+        "h2 {color: black; font-size: 40px; font-weight: 700; margin-top: 5px;}",
+        "p {color: black; font-size: 16px; font-weight: 400; margin-bottom: 0px;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 76,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_UxJG4R": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<!-- Google Térkép beágyazása és középre helyezés -->\n<div class=\"google-map-container\">\n  <iframe \n    src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d209.47676097325932!2d24.378664!3d46.4696803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474f9e7f5de6a897%3A0x8b23d347d3830399!2sStr.%20Principale%20194%2C%20Chirileu%20547551!5e0!3m2!1sen!2shu!4v1689230749684!5m2!1sen!2shu\" \n    width=\"600\" \n    height=\"450\" \n    style=\"border:0;\" \n    allowfullscreen=\"\" \n    loading=\"lazy\">\n  </iframe>\n</div>\n\n<!-- CSS a középre helyezéshez, csökkentett padding -->\n<style>\n  .google-map-container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    width: 100%; /* Az oldal teljes szélességét használja */\n    padding-top: 20px;  /* Csökkentett padding-top */\n    padding-bottom: 20px;  /* Csökkentett padding-bottom */\n  }\n\n  .google-map-container iframe {\n    max-width: 100%; /* A térkép szélessége rugalmas */\n    max-height: 100%; /* A térkép magassága rugalmas */\n  }\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 28
+      }
+    },
+    "custom_liquid_EMGebV": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n  .icon-row {\n    background-color: white;\n    color: black;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center; /* Középre igazítás */\n    padding: 20px;\n    gap: 20px;\n    max-width: 1300px; /* Maximális szélesség 1300px */\n    margin: 0 auto; /* Középre igazítás */\n  }\n\n  .icon-box {\n    flex: 0 1 calc(30% - 20px);\n    background-color: #F5F5F5;\n    text-align: center;\n    padding: 20px;\n    border-radius: 10px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n  }\n\n  .icon-box img {\n    width: 60px;\n    height: 60px;\n    margin-bottom: 15px;\n  }\n\n  .icon-box h2 {\n    font-weight: bold;\n    color: black;\n    font-size: 16px;\n    margin: 10px 0;\n    text-transform: uppercase;\n  }\n\n  .icon-box p {\n    margin: 0;\n    font-size: 14px;\n    color: black;\n    line-height: 1.6;\n  }\n\n  @media (max-width: 768px) {\n    .icon-box {\n      flex: 0 1 calc(45% - 20px);\n    }\n  }\n\n  @media (max-width: 480px) {\n    .icon-box {\n      flex: 0 1 100%;\n    }\n  }\n</style>\n\n<div class=\"icon-row\">\n  <div class=\"icon-box\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0933/1694/0125/files/navigation-svgrepo-com.svg?v=1740045612\" alt=\"Packaged Coffee Icon\">\n    <h2>Atelier</h2>\n    <p>Chirileu 194, Mureș, Romania</p>\n  </div>\n  <div class=\"icon-box\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0933/1694/0125/files/navigation-map-gps-ui-basic-location-svgrepo-com.svg?v=1740045612\" alt=\"Coffee Grinder Icon\">\n    <h2>Recycleart Design Group SRL</h2>\n    <p>CUI 44080940</p>\n  </div>\n  <div class=\"icon-box\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0933/1694/0125/files/contact-svgrepo-com.svg?v=1740045612\" alt=\"Cookies Icon\">\n    <h2>Contactează-ne</h2>\n    <p>office@recycleart.ro / \n0774599596</p>\n  </div>\n</div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_3DPRET": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_tKamda": {
+          "type": "caption",
+          "settings": {
+            "caption": "Ai un proiect? Vrei să ne contactezi?",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_kmxRmK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Completează formularul!",
+            "heading_size": "h1"
+          }
+        },
+        "text_7w4Qk8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Revenim de obicei in aceleasi zi (de lucru) cu un răspuns!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "caption_tKamda",
+        "heading_kmxRmK",
+        "text_7w4Qk8"
+      ],
+      "custom_css": [
+        ".caption-with-letter-spacing--large {text-transform: uppercase; color: black; font-size: 18px; font-weight: 300; margin-bottom: 0px;}",
+        "h2 {color: black; font-size: 40px; font-weight: 700; margin-top: 5px;}",
+        "p {color: black; font-size: 16px; font-weight: 400; margin-bottom: 0px;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_8qAXJW",
+    "custom_liquid_UxJG4R",
+    "custom_liquid_EMGebV",
+    "rich_text_3DPRET",
+    "form"
+  ]
+}

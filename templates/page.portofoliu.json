@@ -1,0 +1,225 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner_6f8MM3": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_M6t98B": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Portofoliu</strong>",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "heading_M6t98B"
+      ],
+      "custom_css": [
+        "h2 {margin-bottom: 0; padding-top: 150px;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/DSC_3722-2048x1367.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-495d2766-523a-4bfa-bce5-e1d1cbf1713f",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "dalbe_image_links_qFayQc": {
+      "type": "dalbe_image_links",
+      "blocks": {
+        "image_XcijEg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Masa_de_sufragerie_rustica.jpg",
+            "heading": "<p><strong>Masa personalizată lemn/metal</strong></p>",
+            "heading_font_color": "#ffffff",
+            "heading_font_size": 22,
+            "text": "",
+            "text_font_color": "#000000",
+            "text_font_size": 16,
+            "button_label": "Vezi proiectul",
+            "button_link": "shopify://pages/galerie",
+            "show_button": true,
+            "use_text_for_button": true,
+            "show_arrow": true,
+            "button_bg_color": "#212121",
+            "button_font_color": "#ffffff",
+            "button_border_radius": 50,
+            "button_border_color": "#007bff",
+            "button_border_thickness": 1,
+            "text_position": "bottom-left",
+            "make_image_clickable": true,
+            "tags": "toate,mobila"
+          }
+        },
+        "image_9Gg494": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Pat_de_dormitor_cu_noptiera.jpg",
+            "heading": "<p><strong>Hotel Sighișoara</strong></p>",
+            "heading_font_color": "#ffffff",
+            "heading_font_size": 22,
+            "text": "",
+            "text_font_color": "#000000",
+            "text_font_size": 16,
+            "button_label": "Vezi proiectul",
+            "button_link": "shopify://pages/galerie",
+            "show_button": true,
+            "use_text_for_button": true,
+            "show_arrow": true,
+            "button_bg_color": "#212121",
+            "button_font_color": "#ffffff",
+            "button_border_radius": 50,
+            "button_border_color": "#007bff",
+            "button_border_thickness": 1,
+            "text_position": "bottom-left",
+            "make_image_clickable": true,
+            "tags": "toate,hotel"
+          }
+        },
+        "image_V97FQD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Mobilier_de_bucatarie_verde.jpg",
+            "heading": "<p><strong>Bucătării la comandă din lemn masiv</strong></p>",
+            "heading_font_color": "#ffffff",
+            "heading_font_size": 22,
+            "text": "",
+            "text_font_color": "#000000",
+            "text_font_size": 16,
+            "button_label": "Vezi proiectul",
+            "button_link": "shopify://pages/galerie",
+            "show_button": true,
+            "use_text_for_button": true,
+            "show_arrow": true,
+            "button_bg_color": "#212121",
+            "button_font_color": "#ffffff",
+            "button_border_radius": 50,
+            "button_border_color": "#007bff",
+            "button_border_thickness": 1,
+            "text_position": "bottom-left",
+            "make_image_clickable": true,
+            "tags": "toate"
+          }
+        },
+        "image_NUxFyk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/438858048_831530032342840_3896968469665120195_n-1024x680.jpg",
+            "heading": "<p><strong>Mobilier restaurant din lemn rustic masiv</strong></p>",
+            "heading_font_color": "#ffffff",
+            "heading_font_size": 22,
+            "text": "",
+            "text_font_color": "#000000",
+            "text_font_size": 16,
+            "button_label": "Vezi proiectul",
+            "button_link": "shopify://pages/galerie",
+            "show_button": true,
+            "use_text_for_button": true,
+            "show_arrow": true,
+            "button_bg_color": "#212121",
+            "button_font_color": "#ffffff",
+            "button_border_radius": 50,
+            "button_border_color": "#007bff",
+            "button_border_thickness": 1,
+            "text_position": "bottom-left",
+            "make_image_clickable": true,
+            "tags": "toate,mobila"
+          }
+        }
+      },
+      "block_order": [
+        "image_XcijEg",
+        "image_9Gg494",
+        "image_V97FQD",
+        "image_NUxFyk"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "image_border_radius": 29,
+        "padding_top": 40,
+        "padding_bottom": 100
+      }
+    },
+    "rich_text_VhmLpW": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_zJ7Tnx": {
+          "type": "caption",
+          "settings": {
+            "caption": "Ai un proiect? Vrei să ne contactezi?",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_WkpBDP": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Completează formularul!</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_yXnEYh": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Revenim de obicei in aceleasi zi (de lucru) cu un răspuns!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "caption_zJ7Tnx",
+        "heading_WkpBDP",
+        "text_yXnEYh"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "contact_form_RyG4E8": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "image_banner_6f8MM3",
+    "main",
+    "dalbe_image_links_qFayQc",
+    "rich_text_VhmLpW",
+    "contact_form_RyG4E8"
+  ]
+}

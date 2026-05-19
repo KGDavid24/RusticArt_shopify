@@ -1,0 +1,125 @@
+{% schema %}
+{
+  "name": "Image Gallery",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container_width",
+      "label": "Container Width",
+      "options": [
+        { "value": "full", "label": "Full Width" },
+        { "value": "boxed", "label": "1200px" }
+      ],
+      "default": "boxed"
+    },
+    {
+      "type": "range",
+      "id": "image_gap",
+      "label": "Image Gap (px)",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Select Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Gallery",
+      "category": "Image",
+      "blocks": [
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .image-gallery {
+    display: flex;
+    gap: {{ section.settings.image_gap }}px;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows images to wrap on smaller screens */
+  }
+
+  .image-gallery img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .container-boxed {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .container-full {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .image-gallery-section {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  /* Desktop: Three images side by side */
+  .image-gallery img {
+    width: calc(33.33% - {{ section.settings.image_gap }}px); /* Each image takes up one-third minus the gap */
+  }
+
+  /* Mobile devices: Stack images vertically */
+  @media (max-width: 768px) {
+    .image-gallery {
+      flex-direction: column; /* Stack images vertically on mobile */
+      align-items: center; /* Center images horizontally */
+    }
+
+    .image-gallery img {
+      width: 100%; /* On mobile, images take full width */
+    }
+  }
+</style>
+
+<div class="image-gallery-section {% if section.settings.container_width == 'full' %}container-full{% else %}container-boxed{% endif %}">
+  <div class="image-gallery">
+    {% for block in section.blocks %}
+      {% if block.settings.image %}
+        <img src="{{ block.settings.image | img_url: 'large' }}" alt="Gallery Image">
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,347 @@
+{% schema %}
+{
+  "name": "Text + Image (1 image)",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top_2",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_2",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 60,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "text_width_2",
+      "label": "Text width (px)",
+      "min": 200,
+      "max": 800,
+      "step": 10,
+      "default": 400,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_2",
+      "label": "Subheading fontsize (px)",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_2",
+      "label": "Heading fontsize (px)",
+      "min": 20,
+      "max": 50,
+      "step": 2,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "body_size_2",
+      "label": "Description size (px)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "wrapper_background",
+      "label": "Wrapper background",
+      "default": "#f7f7f7"
+    },
+    {
+      "type": "select",
+      "id": "layout_direction",
+      "label": "Image direction",
+      "options": [
+        { "value": "image-left", "label": "Image left, Text right" },
+        { "value": "image-right", "label": "Image right, Text left" }
+      ],
+      "default": "image-right"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading_2",
+      "label": "Subheading",
+      "default": "<p>This is a subheading</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "heading_2",
+      "label": "Heading",
+      "default": "<h2><strong>Heading</strong></h2>"
+    },
+    {
+      "type": "richtext",
+      "id": "body_2",
+      "label": "Description",
+      "default": "<p>This is a paragraph of text that can break into multiple lines, with images appearing to the right of it.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "single_image_block",
+      "name": "Image block (1 Image)",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "image_width_2",
+          "label": "Image width (px)",
+          "min": 100,
+          "max": 600,
+          "step": 10,
+          "default": 300,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "image_height_2",
+          "label": "Image height (px)",
+          "min": 100,
+          "max": 600,
+          "step": 10,
+          "default": 300,
+          "unit": "px"
+        }
+      ]
+    },
+    {
+      "type": "button_block",
+      "name": "Button block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "More"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button style",
+          "options": [
+            { "value": "primary", "label": "Primary" },
+            { "value": "secondary", "label": "Secondary" }
+          ],
+          "default": "primary"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 2,
+  "presets": [
+    {
+      "name": "Text + 1 image (in one row)",
+      "category": "Dalbe"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="text-image-section-2" style="padding-top: {{ section.settings.padding_top_2 }}px; padding-bottom: {{ section.settings.padding_bottom_2 }}px;">
+  <div class="wrapper-2 {{ section.settings.layout_direction }}" style="background-color: {{ section.settings.wrapper_background }};">
+    
+    <div class="text-side-2" style="width: {{ section.settings.text_width_2 }}px; text-align: {{ section.settings.text_alignment }};">
+      <div class="subheading-2" style="font-size: {{ section.settings.subheading_size_2 }}px;">
+        {{ section.settings.subheading_2 }}
+      </div>
+      <div class="heading-2" style="font-size: {{ section.settings.heading_size_2 }}px;">
+  {{ section.settings.heading_2 }}
+</div>
+
+
+      <div class="body-2" style="font-size: {{ section.settings.body_size_2 }}px;">
+        {{ section.settings.body_2 }}
+      </div>
+      {% for block in section.blocks %}
+        {% if block.type == 'button_block' %}
+          <div class="custom-button-wrapper">
+            <a href="{{ block.settings.button_link }}" class="custom-button {{ block.settings.button_style }}">
+              {{ block.settings.button_text }}
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="image-side-2">
+      {% for block in section.blocks %}
+        {% if block.type == 'single_image_block' and block.settings.image_2 %}
+          <div class="image2-box" style="width: {{ block.settings.image_width_2 }}px; height: {{ block.settings.image_height_2 }}px;">
+            <img
+              src="{{ block.settings.image_2 | image_url }}"
+              alt=""
+              loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px;"
+            />
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .text-image-section-2 {
+    background-color: #fff;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .wrapper-2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: nowrap;
+    width: 100%;
+    border-radius: 12px;
+    padding: 30px;
+  }
+
+  .wrapper-2.image-left {
+    flex-direction: row-reverse;
+  }
+
+  .wrapper-2.image-right {
+    flex-direction: row;
+  }
+
+  .subheading-2,
+  .heading-2 {
+    line-height: 1.2;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0px !important;
+    padding: 0px !important;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: black;
+  }
+
+  div.body-2 > p > span {
+    line-height: 1.8;
+  }
+
+  .image-side-2 {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image2-box {
+    overflow: hidden;
+  }
+
+  .custom-button-wrapper {
+    margin-top: 10px;
+  }
+
+  .custom-button {
+    display: inline-block;
+    padding: 10px 26px;
+    border-radius: 0px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .custom-button.primary {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .custom-button.secondary {
+    background-color: #f0f0f0;
+    color: #000;
+  }
+
+  @media (max-width: 900px) {
+    .wrapper-2 {
+      flex-direction: column !important;
+    }
+
+    .text-side-2,
+    .image-side-2 {
+      width: 100% !important;
+      max-width: 100%;
+    }
+
+    .image2-box {
+      width: auto !important;
+      max-width: 100%;
+      height: auto !important;
+    }
+
+    .image2-box img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .text-image-section-2 {
+    background-color: #fff;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 20px;
+}
+    .wrapper-2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: nowrap;
+    width: 100%;
+    border-radius: 12px;
+    padding: 20px;
+}
+  }
+</style>

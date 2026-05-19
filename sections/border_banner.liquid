@@ -1,0 +1,218 @@
+{% schema %}
+{
+  "name": "Custom Banner with Image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "label": "Banner Image",
+      "id": "banner_image",
+      "info": "Select an image to display as the banner."
+    },
+    {
+      "type": "range",
+      "label": "Padding",
+      "id": "padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 20,
+      "info": "Adjust the padding on both sides of the image."
+    },
+    {
+      "type": "select",
+      "label": "Background Color",
+      "id": "background_color",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default (Transparent)"
+        },
+        {
+          "value": "white",
+          "label": "White"
+        },
+        {
+          "value": "lightgray",
+          "label": "Light Gray"
+        },
+        {
+          "value": "black",
+          "label": "Black"
+        },
+        {
+          "value": "custom",
+          "label": "Custom (Select Color)"
+        }
+      ],
+      "default": "default",
+      "info": "Select the background color for the banner section."
+    },
+    {
+      "type": "color",
+      "label": "Custom Background Color",
+      "id": "custom_bg_color",
+      "default": "#ffffff",
+      "info": "Choose a custom background color if you selected 'Custom' above."
+    },
+    {
+      "type": "range",
+      "label": "Image Height",
+      "id": "image_height",
+      "min": 100,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "default": 400,
+      "info": "Set the height of the banner image."
+    },
+    {
+      "type": "radio",
+      "label": "Image Border Radius",
+      "id": "border_radius",
+      "options": [
+        {
+          "value": "none",
+          "label": "Sharp Corners"
+        },
+        {
+          "value": "round",
+          "label": "Rounded Corners"
+        }
+      ],
+      "default": "none",
+      "info": "Choose between sharp corners or rounded corners for the image."
+    },
+    {
+      "type": "select",
+      "label": "Width Type",
+      "id": "width_type",
+      "options": [
+        {
+          "value": "full_width",
+          "label": "Full Width"
+        },
+        {
+          "value": "1200px",
+          "label": "1200px Page Width"
+        }
+      ],
+      "default": "full_width",
+      "info": "Choose the width of the banner section."
+    },
+    {
+      "type": "range",
+      "label": "Padding Top",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 0,
+      "info": "Adjust the padding at the top of the section."
+    },
+    {
+      "type": "range",
+      "label": "Padding Bottom",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 0,
+      "info": "Adjust the padding at the bottom of the section."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image banner with padding",
+    }
+  ]
+}
+{% endschema %}
+
+
+
+{% assign image = section.settings.banner_image %}
+{% assign padding = section.settings.padding %}
+{% assign padding_top = section.settings.padding_top %}
+{% assign padding_bottom = section.settings.padding_bottom %}
+{% assign bg_color = section.settings.background_color %}
+{% assign custom_bg_color = section.settings.custom_bg_color %}
+{% assign image_height = section.settings.image_height %}
+{% assign border_radius = section.settings.border_radius %}
+{% assign width_type = section.settings.width_type %}
+
+<div class="custom-banner-wrapper"
+     style="background-color: {% if bg_color == 'custom' %}{{ custom_bg_color }}{% elsif bg_color == 'white' %}#ffffff{% elsif bg_color == 'lightgray' %}#f0f0f0{% elsif bg_color == 'black' %}#000000{% else %}transparent{% endif %}; 
+            width: 100%; padding-top: {{ padding_top }}px; padding-bottom: {{ padding_bottom }}px;">
+
+  <div class="custom-banner" 
+       style="padding-left: {{ padding }}px; padding-right: {{ padding }}px; height: 100%; 
+              {% if width_type == '1200px' %}max-width: 1200px; margin: 0 auto;{% else %}width: 100%;{% endif %}">
+  
+    <div class="banner-image-wrapper" 
+         style="height: {{ image_height }}px; overflow: hidden; border-radius: {% if border_radius == 'round' %}15px{% else %}0{% endif %}; 
+                position: relative; z-index: 1;">
+      <img src="{{ image | img_url: '2048x2048' }}" alt="Banner Image" 
+           style="width: 100%; height: 100%; object-fit: cover; 
+                  border-radius: {% if border_radius == 'round' %}30px{% else %}0{% endif %}; 
+                  position: absolute; top: 0; left: 0; z-index: 0;" />
+    </div>
+  </div>
+</div>
+
+<style>
+.custom-banner-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.custom-banner {
+  position: relative;
+  width: 100%;
+  background-color: inherit; /* Ensures background color is inherited */
+}
+
+.custom-banner .banner-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: inherit; /* Background color will inherit from custom-banner */
+}
+
+.custom-banner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Puts the image behind the background */
+}
+
+@media screen and (max-width: 768px) {
+  .custom-banner {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .custom-banner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  z-index: 0; /* Puts the image behind the background */
+}
+}
+</style>
+
+
+
+
+
+

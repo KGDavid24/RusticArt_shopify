@@ -1,0 +1,228 @@
+{% schema %}
+{
+  "name": "Logo Marquee",
+  "settings": [
+    {
+      "type": "select",
+      "id": "scroll_direction",
+      "label": "Scroll Direction",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "logo_speed",
+      "label": "Marquee Speed",
+      "min": 5,
+      "max": 50,
+      "default": 10,
+      "unit": "s"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "label": "Image Width",
+      "min": 100,
+      "max": 1000,
+      "default": 600,
+      "unit": "px",
+      "step": 10
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "label": "Image Height",
+      "min": 100,
+      "max": 1000,
+      "default": 250,
+      "unit": "px",
+      "step": 10
+    },
+    {
+      "type": "range",
+      "id": "image_gap",
+      "label": "Image Gap",
+      "min": 0,
+      "max": 100,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "logo_width",
+      "label": "Marquee Width",
+      "options": [
+        { "value": "full", "label": "Full Width" },
+        { "value": "1200px", "label": "1200px Width" }
+      ],
+      "default": "full"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "Image Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Logo Marquee",
+      "category": "Logo"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.image-logo-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: {% if section.settings.logo_width == 'full' %} 100% {% else %} 1200px {% endif %};
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.image-logo-container[data-direction="right"] .image-logo-track {
+  animation-direction: reverse;
+}
+
+.image-logo-track {
+  display: flex;
+  gap: {{ section.settings.image_gap }}px;
+  animation: scroll-animation {{ section.settings.logo_speed }}s linear infinite;
+}
+
+.image-logo-track img {
+  width: {{ section.settings.image_width }}px;
+  height: {{ section.settings.image_height }}px;
+  object-fit: contain; /* Changed from cover to contain to preserve aspect ratio */
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-logo-container a {
+  display: block;
+}
+
+@keyframes scroll-animation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* Adjusted to scroll smoothly without stopping */
+  }
+}
+
+.image-logo-container[data-direction="left"] .image-logo-track {
+  animation-direction: normal;
+}
+
+/* Edge fade effects */
+.image-logo-container {
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.8) 100%),
+              linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.8) 100%);
+  background-size: 15% 100%;
+  background-repeat: no-repeat;
+}
+
+/* Link hover effects */
+.image-logo-track a:hover img {
+  filter: none; /* No blur effect on hover */
+}
+
+/* Box shadow for 1200px width */
+{% if section.settings.logo_width == '1200px' %}
+.image-logo-container {
+  box-shadow: inset -20px 0 15px rgba(255, 255, 255, 0.5), inset 20px 0 15px rgba(255, 255, 255, 0.5);
+}
+{% endif %}
+
+/* Responzív CSS: Mobil nézetekhez */
+@media (max-width: 768px) {
+  .image-logo-container {
+    width: 100%; /* Full width on mobile */
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px; 
+  }
+
+  .image-logo-track {
+    gap: 10px; /* Smaller gap on mobile */
+  }
+
+  .image-logo-track img {
+    width: 150px; /* Adjust image size for mobile */
+    height: auto;
+  }
+
+ 
+}
+
+
+</style>
+
+<div class="image-logo-container" data-direction="{{ section.settings.scroll_direction }}">
+  <div class="image-logo-track">
+    {% for block in section.blocks %}
+      {% if block.settings.image %}
+        {% assign image_url = block.settings.image | img_url: 'original' %}
+        {% if block.settings.image_link != blank %}
+          <a href="{{ block.settings.image_link }}" target="_blank">
+            <img src="{{ image_url }}" alt="Logo Image">
+          </a>
+        {% else %}
+          <img src="{{ image_url }}" alt="Logo Image">
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% for block in section.blocks %}
+      {% if block.settings.image %}
+        {% assign image_url = block.settings.image | img_url: 'original' %}
+        {% if block.settings.image_link != blank %}
+          <a href="{{ block.settings.image_link }}" target="_blank">
+            <img src="{{ image_url }}" alt="Logo Image">
+          </a>
+        {% else %}
+          <img src="{{ image_url }}" alt="Logo Image">
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,718 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow_iPWtxE": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_BzH9hb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/interioare_unicate.webp",
+            "image_overlay_opacity": 40,
+            "heading": "INTERIOARE UNICATE",
+            "heading_size": "h1",
+            "subheading": "Mobilă și interioare complete din lemn masiv și lemn reciclat în stiluri rustic, vintage și industrial.",
+            "button_label": "Vezi portofoliu nostru",
+            "link": "shopify://pages/portofoliu",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-4"
+          }
+        },
+        "slide_RRx3YH": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/DSC_0708-3-2048x1360_1.webp",
+            "image_overlay_opacity": 30,
+            "heading": "PATURILE UNICE DE LA RUSTIC ART",
+            "heading_size": "h1",
+            "subheading": "Paturile noastre au devenit populare pentru un motiv!",
+            "button_label": "Magazinul nostru",
+            "link": "shopify://collections",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-3"
+          }
+        }
+      },
+      "block_order": [
+        "slide_BzH9hb",
+        "slide_RRx3YH"
+      ],
+      "custom_css": [
+        "p {color: white;}",
+        ".banner__heading {font-weight: 200;}",
+        ".banner__heading {margin-bottom: 0; padding-top: 150px;}"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "multicolumn_cdn9bj": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_cipNAb": {
+          "type": "column",
+          "settings": {
+            "title": "Eleganță în fiecare detaliu: mobilă și design interior handmade",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_GnYKMB": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p>Rustic Art crează mobilă ce dă un caracter unic fiecărei afacere și case. De-a lungul anilor, am construit un portofoliu vast de proiecte de succes. Indiferent că e o cafenea, un birou modern, restaurant sau livingul tău, cu mobila noastră, caracteristică din lemn combinat cu elemente industriale, orice cameră va avea o atmosferă îmbunătățită!</p>",
+            "link_label": "Vezi portofoliu nostru",
+            "link": "shopify://pages/portofoliu"
+          }
+        }
+      },
+      "block_order": [
+        "column_cipNAb",
+        "column_GnYKMB"
+      ],
+      "custom_css": [
+        "h3 {font-weight: 700; font-size: 40px;}",
+        "p {color: black;}",
+        ".multicolumn-card__info .link {text-decoration: none; font-size: inherit; margin-top: 1.5rem; background-color: black; color: white; padding: 10px; padding-right: 15px; padding-left: 15px;}",
+        "@media (max-width: 768px) {h3 {font-weight: 700; font-size: 30px; text-align: left; } p {color: black; text-align: left; } .link {cursor: pointer; display: block; margin-top: 30px !important; }}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "featured_collection_Drw4aR": {
+      "type": "featured-collection",
+      "disabled": true,
+      "custom_css": [
+        ".price--on-sale .price__sale {color: red; font-weight: 500;}",
+        "h3 {display: -webkit-box; -webkit-line-clamp: 2; /* Maximum 2 sor */ -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;}"
+      ],
+      "settings": {
+        "collection": "paturi",
+        "products_to_show": 25,
+        "title": "<strong>Direct din atelier - Promoția de Primăvară</strong>",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 6,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_marque_zftwyz": {
+      "type": "image-marque",
+      "blocks": {
+        "image_WA6HEm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Masa_din_lemn_in_sufragerie_aranjament_confortabil_si_stilat.webp"
+          }
+        },
+        "image_jdWNae": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Mobila_de_living.webp"
+          }
+        },
+        "image_nk8rXe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Mobila_de_bucatarie.webp"
+          }
+        },
+        "image_cYHcrg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Masa_de_gradina_si_banca_langa_ea_in_gradina.webp"
+          }
+        },
+        "image_wYiYkj": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "image_WA6HEm",
+        "image_jdWNae",
+        "image_nk8rXe",
+        "image_cYHcrg",
+        "image_wYiYkj"
+      ],
+      "settings": {
+        "scroll_direction": "left",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "marquee_speed": 50
+      }
+    },
+    "image_marque_Txrd7f": {
+      "type": "image-marque",
+      "blocks": {
+        "image_bc67yR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bucatarie_rustica.webp"
+          }
+        },
+        "image_iP84k3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Mobilier_de_baie.webp"
+          }
+        },
+        "image_gQzdPn": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_zjQLxQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Noptiera.webp"
+          }
+        },
+        "image_dB3Waz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Mobila_de_bucatarie_rustica.webp"
+          }
+        }
+      },
+      "block_order": [
+        "image_bc67yR",
+        "image_iP84k3",
+        "image_gQzdPn",
+        "image_zjQLxQ",
+        "image_dB3Waz"
+      ],
+      "settings": {
+        "scroll_direction": "right",
+        "padding_top": 0,
+        "padding_bottom": 20,
+        "marquee_speed": 50
+      }
+    },
+    "rich_text_Fdp89C": {
+      "type": "rich-text",
+      "blocks": {
+        "text_6eepHF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Vrei sa îți transformi dormitorul?</p>"
+          }
+        },
+        "heading_6KcfRT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Paturile noastre populare",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "text_6eepHF",
+        "heading_6KcfRT"
+      ],
+      "custom_css": [
+        "p {text-transform: uppercase; color: black; font-size: 20px; font-weight: 300; margin-bottom: 0px;}",
+        "h2 {color: black; font-size: 40px; font-weight: 700; margin-top: 5px;}",
+        "@media (max-width: 768px) {h2 {font-weight: 700; font-size: 30px; text-align: left; } p {color: black; text-align: left; font-size: 15px; }}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 32,
+        "padding_bottom": 12
+      }
+    },
+    "dalbe_featured_collection_W6YiNV": {
+      "type": "dalbe-featured-collection",
+      "custom_css": [
+        "p {padding-top: 0px;}",
+        ".discounted-price {color: #ff0000; font-weight: 500; font-size: 20px;}"
+      ],
+      "settings": {
+        "featured_collection": "paturi",
+        "section_background_color": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "collection_image": "shopify://shop_images/Pat_dormitor.webp",
+        "card_background_color": "#f3f3f3",
+        "button_background_color": "#121212",
+        "collection_button_text": "Spre magazin",
+        "collection_link": "https://rusticartshop.myshopify.com/collections/paturi-1",
+        "button_link": "https://rusticartshop.myshopify.com/collections/paturi-1",
+        "product_button_text": "Cumpără acum",
+        "title_font_size": 18,
+        "title_alignment": "left",
+        "heading_text": "<p><strong>Paturile noastre</strong></p>",
+        "text_content": "",
+        "heading_font_size": 24,
+        "text_font_size": 17,
+        "heading_font_color": "#ffffff",
+        "text_font_color": "#ffffff",
+        "text_position": "bottom-left",
+        "add_arrow": true,
+        "button_border_radius": "10",
+        "button_border_color": "#000000",
+        "button_font_color": "#ffffff",
+        "button_background": "#f3f3f3",
+        "underline_button_text": true,
+        "transparent_button_bg": true,
+        "add_border_to_button": false,
+        "button_border_thickness": 1,
+        "out_of_stock_bg_color": "",
+        "out_of_stock_font_color": "",
+        "out_of_stock_text": "Stoc epuizat",
+        "badge_text": "Promoție",
+        "badge_background_color": "#ff0000",
+        "badge_text_color": "#ffffff"
+      }
+    },
+    "multicolumn_AWhgiY": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_4wdgEc": {
+          "type": "column",
+          "settings": {
+            "title": "Interioare unice",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_H8LJJV": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p>Rustic Art crează mobilă ce dă un caracter unic fiecărei afaceri și case. De-a lungul anilor, am construit un portofoliu vast de proiecte de succes. Indiferent că e o cafenea, restaurant sau livingul tău, cu mobila noastră, caracteristică din lemn combinat cu elemente industriale, orice cameră va avea o atmosferă îmbunătățită!</p>",
+            "link_label": "",
+            "link": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "column_4wdgEc",
+        "column_H8LJJV"
+      ],
+      "custom_css": [
+        "h3 {font-weight: 700; font-size: 40px; margin-top: 20px;}",
+        "p {color: black;}",
+        ".multicolumn-card__info .link {text-decoration: none; font-size: inherit; margin-top: 1.5rem; background-color: black; color: white; padding: 10px; padding-right: 15px; padding-left: 15px;}",
+        "@media (max-width: 768px) {h3 {font-weight: 700; font-size: 30px; text-align: left; } p {color: black; text-align: left; font-size: 15px; } .link {cursor: pointer; display: block; margin-top: 30px !important; }}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 32,
+        "padding_bottom": 0
+      }
+    },
+    "border_banner_kBpqBJ": {
+      "type": "border_banner",
+      "settings": {
+        "banner_image": "shopify://shop_images/Pat_rustic_dormitor.webp",
+        "padding": 25,
+        "background_color": "custom",
+        "custom_bg_color": "#f3f3f3",
+        "image_height": 230,
+        "border_radius": "round",
+        "width_type": "1200px",
+        "padding_top": 0,
+        "padding_bottom": 20
+      }
+    },
+    "rich_text_X3iEei": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_aJKYb4": {
+          "type": "heading",
+          "settings": {
+            "heading": "Dece sa alegi Rustic Art?",
+            "heading_size": "h1"
+          }
+        },
+        "text_t7AdVU": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        },
+        "button_dY9TAB": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_aJKYb4",
+        "text_t7AdVU",
+        "button_dY9TAB"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_layout_eNKAm9": {
+      "type": "multicolumn_layout",
+      "blocks": {
+        "multi_column_block_QHBeQ8": {
+          "type": "multi_column_block",
+          "settings": {
+            "column_padding_top": 40,
+            "column_padding_bottom": 40,
+            "column_padding_left": 35,
+            "column_padding_right": 35,
+            "column_border_radius": 30,
+            "column_image": "shopify://shop_images/pencil-svgrepo-com.svg",
+            "column_image_size": 50,
+            "column_image_alignment": "left",
+            "text_alignment": "left",
+            "column_heading": "<strong>'Handmade' la comandă</strong>",
+            "column_heading_font_size": 24,
+            "column_heading_color": "#000000",
+            "column_heading_padding_top": 25,
+            "column_heading_padding_bottom": 0,
+            "column_text": "Așa cum îți place. masă, scaun sau blat de bucătărie, orice, echipa noastră ascultă tot și împreună căutăm cea mai bună soluție pentru dorințele tale. Lemn, lemn reciclat sau o combinație de lemn, știm cum să facem ca locul tău să se simtă ca acasă. Totul este făcut manual în atelierul nostru.",
+            "column_text_color": "#333333",
+            "column_text_font_size": 16,
+            "column_text_padding_top": 10,
+            "column_text_padding_bottom": 45,
+            "button_text": "Citește mai mult",
+            "button_link": "shopify://pages/despre-noi",
+            "button_background_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_alignment": "left",
+            "show_arrow": true,
+            "is_simple_button": false,
+            "button_bold_text": false,
+            "button_border_radius": 40
+          }
+        },
+        "multi_column_block_Q7LPX8": {
+          "type": "multi_column_block",
+          "settings": {
+            "column_padding_top": 40,
+            "column_padding_bottom": 40,
+            "column_padding_left": 35,
+            "column_padding_right": 35,
+            "column_border_radius": 30,
+            "column_image": "shopify://shop_images/return-svgrepo-com.svg",
+            "column_image_size": 50,
+            "column_image_alignment": "left",
+            "text_alignment": "left",
+            "column_heading": "<strong>Reciclăm lemnul</strong>",
+            "column_heading_font_size": 24,
+            "column_heading_color": "#000000",
+            "column_heading_padding_top": 25,
+            "column_heading_padding_bottom": 0,
+            "column_text": "Recycl’Art a început cu proiecte de tâmplărie din lemn reciclat. Paleți, lemn de marfă, ferestre vechi, grinzi din case vechi și multe alte surse pe care le punem în mobilierul și proiectele noastre, lemnul reciclat este combinat cu diferite tipuri de lemn (pin, stejar, tei) sau combinat cu oțel, beton sau orice alt material dorit de client.",
+            "column_text_color": "#333333",
+            "column_text_font_size": 16,
+            "column_text_padding_top": 10,
+            "column_text_padding_bottom": 15,
+            "button_text": "Despre reciclare",
+            "button_link": "shopify://pages/contact",
+            "button_background_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_alignment": "left",
+            "show_arrow": true,
+            "is_simple_button": false,
+            "button_bold_text": false,
+            "button_border_radius": 40
+          }
+        },
+        "multi_column_block_nJWk4A": {
+          "type": "multi_column_block",
+          "settings": {
+            "column_padding_top": 40,
+            "column_padding_bottom": 40,
+            "column_padding_left": 35,
+            "column_padding_right": 35,
+            "column_border_radius": 30,
+            "column_image": "shopify://shop_images/smiley-o-svgrepo-com_1.svg",
+            "column_image_size": 50,
+            "column_image_alignment": "left",
+            "text_alignment": "left",
+            "column_heading": "<strong>Impact Social</strong>",
+            "column_heading_font_size": 24,
+            "column_heading_color": "#000000",
+            "column_heading_padding_top": 25,
+            "column_heading_padding_bottom": 0,
+            "column_text": "Recycleart este co-fondată de Asociația Roman Works. Un ONG cu viziunea de a crea locuri de muncă pentru oameni distanțați de piața forței de muncă. Alte organizații caritabile beneficiază de donații sau de colaborare în diferite proiecte.",
+            "column_text_color": "#333333",
+            "column_text_font_size": 16,
+            "column_text_padding_top": 10,
+            "column_text_padding_bottom": 70,
+            "button_text": "Despre impactul social",
+            "button_link": "shopify://pages/despre-noi",
+            "button_background_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_alignment": "left",
+            "show_arrow": true,
+            "is_simple_button": false,
+            "button_bold_text": false,
+            "button_border_radius": 40
+          }
+        }
+      },
+      "block_order": [
+        "multi_column_block_QHBeQ8",
+        "multi_column_block_Q7LPX8",
+        "multi_column_block_nJWk4A"
+      ],
+      "settings": {
+        "section_background_color": "#f3f3f3",
+        "section_padding_top": 10,
+        "section_padding_bottom": 50,
+        "section_padding_left": 10,
+        "section_padding_right": 10
+      }
+    },
+    "rich_text_QF6kRz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_RqgfNM": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Parteneri noștri</strong>",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RqgfNM"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "logo_marque_qjXbFj": {
+      "type": "logo_marque",
+      "blocks": {
+        "image_4FjnTY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo_anticapizza.webp",
+            "image_link": ""
+          }
+        },
+        "image_QzgePr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo_thebean.webp",
+            "image_link": ""
+          }
+        },
+        "image_UgHfQR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo_walsdorf.webp",
+            "image_link": ""
+          }
+        },
+        "image_RcUTwc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo_countrybread.webp",
+            "image_link": ""
+          }
+        },
+        "image_8RLkwX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo_frizeria.webp",
+            "image_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_4FjnTY",
+        "image_QzgePr",
+        "image_UgHfQR",
+        "image_RcUTwc",
+        "image_8RLkwX"
+      ],
+      "settings": {
+        "scroll_direction": "left",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "logo_speed": 33,
+        "image_width": 200,
+        "image_height": 210,
+        "image_gap": 0,
+        "logo_width": "full"
+      }
+    },
+    "rich_text_Y9Tp8E": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_etWyK7": {
+          "type": "caption",
+          "settings": {
+            "caption": "Ai un proiect? Contactează-ne acum!",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "large"
+          }
+        },
+        "heading_CAbn3T": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Completează formularul!</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_EFVy6D": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Revenim de obicei in aceleasi zi (de lucru) cu un răspuns!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "caption_etWyK7",
+        "heading_CAbn3T",
+        "text_EFVy6D"
+      ],
+      "custom_css": [
+        ".caption-with-letter-spacing--large {text-transform: uppercase; color: black; font-size: 18px; font-weight: 300; margin-bottom: 0px;}",
+        "h2 {color: black; font-size: 40px; font-weight: 700; margin-top: 5px;}",
+        "p {color: black; font-size: 16px; font-weight: 400; margin-bottom: 0px;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "contact_form_jbPxnB": {
+      "type": "contact-form",
+      "custom_css": [],
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 68
+      }
+    },
+    "featured_blog_mAhNd9": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "blog": "rustic-blog",
+        "post_limit": 2,
+        "heading": "Rustic Blog",
+        "heading_size": "h1",
+        "columns_desktop": 2,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "slideshow_iPWtxE",
+    "multicolumn_cdn9bj",
+    "featured_collection_Drw4aR",
+    "image_marque_zftwyz",
+    "image_marque_Txrd7f",
+    "rich_text_Fdp89C",
+    "dalbe_featured_collection_W6YiNV",
+    "multicolumn_AWhgiY",
+    "border_banner_kBpqBJ",
+    "rich_text_X3iEei",
+    "multicolumn_layout_eNKAm9",
+    "rich_text_QF6kRz",
+    "logo_marque_qjXbFj",
+    "rich_text_Y9Tp8E",
+    "contact_form_jbPxnB",
+    "featured_blog_mAhNd9"
+  ]
+}

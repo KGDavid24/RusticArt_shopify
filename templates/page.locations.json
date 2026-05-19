@@ -1,0 +1,58 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_YJDVNG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_H7zYbt": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Parteneriate B2B</strong>",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_H7zYbt"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 76,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "locations_landing_xiAipb": {
+      "type": "Locations_landing",
+      "name": "Location Slider",
+      "settings": {
+        "section_bg_color": "#f3f3f3",
+        "edge_card_padding": 20
+      }
+    }
+  },
+  "order": [
+    "rich_text_YJDVNG",
+    "main",
+    "locations_landing_xiAipb"
+  ]
+}

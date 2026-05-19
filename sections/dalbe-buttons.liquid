@@ -1,0 +1,245 @@
+{% schema %}
+{
+  "name": "Custom Button Section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top (px)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom (px)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "button_gap",
+      "label": "Button Gap (px)",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button Font Size (px)",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_letter_spacing",
+      "label": "Button Letter Spacing (px)",
+      "min": 0,
+      "max": 5,
+      "step": 0.1,
+      "default": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "button_border",
+      "label": "Enable Border",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "label": "Button Border Width (px)",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button Border Radius (px)",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button Border Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Background Color",
+      "default": "#007bff"
+    },
+    {
+      "type": "color",
+      "id": "button_font_color",
+      "label": "Button Font Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "button_text_align",
+      "label": "Button Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Button Hover Background Color",
+      "default": "#0056b3"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_font_color",
+      "label": "Button Hover Font Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_border_color",
+      "label": "Button Hover Border Color",
+      "default": "#0056b3"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile Layout",
+      "options": [
+        { "value": "slider", "label": "Slider" },
+        { "value": "stacked", "label": "Stacked" },
+        { "value": "two_columns", "label": "Two Columns" }
+      ],
+      "default": "stacked"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "button",
+      "name": "Button",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "Click Me"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .custom-button-section {
+    width: 100%;
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  }
+  .custom-button-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center; /* Center buttons horizontally */
+    gap: {{ section.settings.button_gap }}px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .custom-button-container a {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    padding: 5px 20px;
+    font-size: {{ section.settings.button_font_size }}px;
+    letter-spacing: {{ section.settings.button_letter_spacing }}px;
+    background-color: {{ section.settings.button_bg_color }};
+    color: {{ section.settings.button_font_color }};
+    border: {{ section.settings.button_border_width }}px solid {{ section.settings.button_border_color }};
+    border-radius: {{ section.settings.button_border_radius }}px;
+    text-align: {{ section.settings.button_text_align }};
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+  }
+
+  /* Hover styles */
+  .custom-button-container a:hover {
+    background-color: {{ section.settings.button_hover_bg_color }};
+    color: {{ section.settings.button_hover_font_color }};
+    border-color: {{ section.settings.button_hover_border_color }};
+  }
+
+  /* Adding padding-left only to the container for desktop */
+  @media (min-width: 768px) {
+    .custom-button-container {
+      padding-left: 30px; /* Space before the first button */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .custom-button-container {
+      {% if section.settings.mobile_layout == "slider" %}
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        justify-content: center; /* Center buttons in mobile view */
+      {% elsif section.settings.mobile_layout == "stacked" %}
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      {% elsif section.settings.mobile_layout == "two_columns" %}
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: {{ section.settings.button_gap }}px;
+      {% endif %}
+    }
+  }
+</style>
+
+
+
+
+
+
+<div class="custom-button-section" style="background-color: {{ section.settings.section_bg_color }};">
+  <div class="custom-button-container">
+    {% for block in section.blocks %}
+      <a href="{{ block.settings.button_link }}" class="custom-button">
+        {{ block.settings.button_label }}
+      </a>
+    {% endfor %}
+  </div>
+</div>
