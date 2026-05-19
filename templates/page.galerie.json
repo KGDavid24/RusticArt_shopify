@@ -21,7 +21,7 @@
       "type": "dalbe-image-gallery",
       "settings": {
         "heading": "Galeria Rustic Art",
-        "description": "<p>Aici veți descoperi o colecție unică de piese de mobilier lucrate manual, care îmbină măiestria tradițională cu designul contemporan. Fiecare obiect din această galerie reflectă pasiunea noastră pentru calitate și atenția la detalii, fiind creat pentru a aduce frumusețe și funcționalitate în orice spațiu. Explorați și inspirați-vă din creațiile noastre!</p>",
+        "back_label": "← Înapoi la portofoliu",
         "button_label": "Contactează-ne",
         "button_link": "shopify://pages/contact",
         "container_width": "boxed",

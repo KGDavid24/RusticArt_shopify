@@ -19,10 +19,10 @@
       "default": "Galeria Rustic Art"
     },
     {
-      "type": "richtext",
-      "id": "description",
-      "label": "Description",
-      "default": "<p>Explorați creațiile noastre.</p>"
+      "type": "text",
+      "id": "back_label",
+      "label": "Back to Portfolio label",
+      "default": "← Înapoi la portofoliu"
     },
     {
       "type": "text",
@@ -232,9 +232,9 @@
     {% if section.settings.heading != blank %}
       <h1 class="gallery-intro__heading">{{ section.settings.heading | escape }}</h1>
     {% endif %}
-    {% if section.settings.description != blank %}
+    {% if page.content != blank %}
       <div class="gallery-intro__description rte">
-        {{ section.settings.description }}
+        {{ page.content }}
         <p class="gallery-project-continuation" id="gallery-project-continuation" style="display:none;"></p>
       </div>
     {% endif %}
@@ -258,7 +258,7 @@
   {% endfor %}
 
   <div class="gallery-project-bar" id="gallery-project-bar">
-    <a href="/pages/portofoliu" class="gallery-back-link">{{ 'sections.gallery.back_to_portfolio' | t }}</a>
+    <a href="/pages/portofoliu" class="gallery-back-link">{{ section.settings.back_label }}</a>
     <span class="gallery-project-title" id="gallery-project-title"></span>
   </div>
 
